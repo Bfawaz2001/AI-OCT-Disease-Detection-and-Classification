@@ -1,0 +1,36 @@
+# Core Libraries
+numpy
+pandas
+matplotlib
+seaborn
+
+# Deep Learning
+torch
+torchvision
+tensorflow
+albumentations
+
+# Handling Imbalance
+imbalanced-learn
+torchsampler
+
+# Visualization
+opencv-python
+scikit-learn
+grad-cam
+
+# GUI
+PyQt5
+
+# Deployment
+flask
+fastapi
+uvicorn
+
+# Containerization
+docker
+
+# CI/CD
+pytest
+black
+flake8
