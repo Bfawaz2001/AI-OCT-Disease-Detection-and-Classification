@@ -3,8 +3,15 @@ import numpy as np
 from pathlib import Path
 from PIL import Image
 import torch
-from torch.utils.data import Dataset, DataLoader
+from torch.utils.data import Dataset
 from torchvision.transforms import Compose, Resize, ToTensor
+import logging
+
+# Configure logging
+logging.basicConfig(
+    level=logging.INFO,  # Set to INFO to suppress debug logs during normal runs
+    format="%(asctime)s - %(levelname)s - %(message)s"
+)
 
 class OCTDataset(Dataset):
     def __init__(self, dataframe, label_columns, transform=None, target_size=(224, 224)):
@@ -20,7 +27,8 @@ class OCTDataset(Dataset):
         row = self.dataframe.iloc[idx]
         image_path = str(row['image_path']).strip()
 
-        print(f"Resolved image path: {image_path}")  # Debugging output
+        # Debug log instead of print
+        logging.debug(f"Resolved image path: {image_path}")
 
         if not Path(image_path).exists():
             raise FileNotFoundError(f"Image not found at {image_path}")
@@ -44,6 +52,7 @@ class OCTDataset(Dataset):
 
         return image, labels
 
+
 def load_data(data_dir):
     subsets = [
         {"name": "train", "csv_name": "RFMiD_Training_Labels.csv"},
@@ -57,19 +66,20 @@ def load_data(data_dir):
         csv_file = subset_dir / subset["csv_name"]
         images_dir = subset_dir / "images"
 
-        print(f"Looking for CSV file: {csv_file}")  # Debugging statement
+        # Log CSV lookup
+        logging.info(f"Looking for CSV file: {csv_file}")
 
         if not csv_file.exists():
-            print(f"CSV file not found: {csv_file}")
+            logging.warning(f"CSV file not found: {csv_file}")
             continue
 
         df = pd.read_csv(csv_file)
         df['image_path'] = df['ID'].apply(lambda x: str(images_dir / f"{x}.png"))
+        df['split'] = subset["name"]  # Add a split column to identify the dataset
         data.append(df)
 
     if not data:
         raise FileNotFoundError("No data files were loaded. Check file paths.")
 
     return pd.concat(data, ignore_index=True)
-
 

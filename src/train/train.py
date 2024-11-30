@@ -1,77 +1,70 @@
 import os
+import logging
+from pathlib import Path
 import torch
 from torch.utils.data import DataLoader
+from torch import nn, optim
 from tqdm import tqdm
-import logging
-from src.data.dataset import load_data, OCTDataset
 from src.model.model import OCTModel
+from src.data.dataset import OCTDataset, load_data
+from torchvision.transforms import Compose, Resize, ToTensor
 
-# Set up logging
+# Configure logging
 logging.basicConfig(
     level=logging.INFO,
     format="%(asctime)s - %(levelname)s - %(message)s"
 )
 
+
 def train_model(data_dir, model_save_path, num_epochs=10, batch_size=32, learning_rate=0.001):
     logging.info("Loading training and validation data...")
 
-    # Load data
-    all_data = load_data(data_dir)
-    label_columns = list(all_data.columns[2:-1])  # Select only label columns (excluding ID and image_path)
+    # Load the full dataset
+    data = load_data(data_dir)
+    label_columns = [col for col in data.columns if
+                     col not in ['ID', 'image_path', 'split']]  # Exclude non-label columns
 
-    # Separate train and validation datasets based on directory structure
-    train_data = all_data[all_data["image_path"].str.contains("train")]
-    val_data = all_data[all_data["image_path"].str.contains("val")]
+    # Split the dataset into train and validation
+    train_data = data[data["split"] == "train"]
+    val_data = data[data["split"] == "val"]
 
-    # Create datasets
-    train_dataset = OCTDataset(train_data, label_columns=label_columns, transform=None)
-    val_dataset = OCTDataset(val_data, label_columns=label_columns, transform=None)
+    # Create datasets and dataloaders
+    train_dataset = OCTDataset(train_data, label_columns, transform=None)
+    val_dataset = OCTDataset(val_data, label_columns, transform=None)
+    train_loader = DataLoader(train_dataset, batch_size=batch_size, shuffle=True)
+    val_loader = DataLoader(val_dataset, batch_size=batch_size, shuffle=False)
 
-    # Create data loaders
-    train_loader = DataLoader(train_dataset, batch_size=batch_size, shuffle=True, num_workers=4)
-    val_loader = DataLoader(val_dataset, batch_size=batch_size, shuffle=False, num_workers=4)
-
-    # Initialize the model
     logging.info("Initializing the OCT Model...")
-    device = torch.device("cuda" if torch.cuda.is_available() else "cpu")
-    model = OCTModel(num_classes=len(label_columns)).to(device)
+    model = OCTModel(num_classes=len(label_columns))
     logging.info("Model initialized successfully!")
 
-    # Define loss and optimizer
+    # Loss function and optimizer
     criterion = torch.nn.BCEWithLogitsLoss()
     optimizer = torch.optim.Adam(model.parameters(), lr=learning_rate)
 
-    # Training loop
     logging.info("Starting training...")
+    best_loss = float('inf')
+
     for epoch in range(num_epochs):
         model.train()
         train_loss = 0.0
-        progress_bar = tqdm(train_loader, desc=f"Epoch {epoch + 1}/{num_epochs}", leave=False)
 
-        for batch_idx, (images, labels) in enumerate(progress_bar):
-            images, labels = images.to(device), labels.to(device)
-
-            # Forward pass
+        for images, labels in tqdm(train_loader, desc=f"Epoch {epoch + 1}/{num_epochs}", unit="batch"):
             optimizer.zero_grad()
             outputs = model(images)
             loss = criterion(outputs, labels)
-
-            # Backward pass and optimization
             loss.backward()
             optimizer.step()
-
             train_loss += loss.item()
-            progress_bar.set_postfix({"loss": loss.item()})
 
         train_loss /= len(train_loader)
         logging.info(f"Epoch {epoch + 1}/{num_epochs}, Training Loss: {train_loss:.4f}")
 
-        # Validation
+        # Validate the model
         model.eval()
         val_loss = 0.0
         with torch.no_grad():
             for images, labels in val_loader:
-                images, labels = images.to(device), labels.to(device)
                 outputs = model(images)
                 loss = criterion(outputs, labels)
                 val_loss += loss.item()
@@ -79,12 +72,14 @@ def train_model(data_dir, model_save_path, num_epochs=10, batch_size=32, learnin
         val_loss /= len(val_loader)
         logging.info(f"Epoch {epoch + 1}/{num_epochs}, Validation Loss: {val_loss:.4f}")
 
-    # Save the model
-    logging.info("Training complete. Saving the model...")
-    torch.save(model.state_dict(), model_save_path)
-    logging.info(f"Model saved to {model_save_path}")
+        # Save the best model
+        if val_loss < best_loss:
+            best_loss = val_loss
+            torch.save(model.state_dict(), model_save_path)
+            logging.info(f"New best model saved with Validation Loss: {best_loss:.4f}")
+
 
 if __name__ == "__main__":
-    data_dir = "../../data"
-    model_save_path = "../../models/oct_model.pth"
-    train_model(data_dir, model_save_path, num_epochs=10, batch_size=32, learning_rate=0.001)
+    data_dir = "../../data"  # Update this to your actual data directory
+    model_save_path = "../../model/oct_model.pth"  # Path to save the final model
+    train_model(data_dir, model_save_path, num_epochs=50, batch_size=10, learning_rate=0.001)

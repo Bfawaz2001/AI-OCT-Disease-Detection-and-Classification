@@ -1,100 +1,84 @@
 import torch
+import numpy as np
+from sklearn.metrics import classification_report, confusion_matrix, roc_auc_score
+import matplotlib.pyplot as plt
+import seaborn as sns
+from src.model.model import OCTModel  # Adjust the import based on your project structure
+from src.data.dataset import OCTDataset, load_data  # Adjust the import based on your project structure
 from torch.utils.data import DataLoader
-from sklearn.metrics import accuracy_score, precision_score, recall_score, f1_score
-from src.data.dataset import OCTDataset, load_data
-from src.model.model import OCTModel
+from torchvision.transforms import Compose, Resize, ToTensor
 
+# Define evaluation function
+def evaluate_model(model_path, test_loader, label_columns, device):
+    # Load the model with matching output dimensions
+    model = OCTModel(num_classes=len(label_columns)).to(device)
 
-def load_test_data():
-    """
-    Load the test dataset from a hardcoded path.
+    checkpoint = torch.load(model_path, map_location=device, weights_only=True)
+    model_state_dict = checkpoint
 
-    Returns:
-        DataLoader: PyTorch DataLoader for the test dataset.
-    """
-    data_dir = "../../data/test"
-    from pathlib import Path
-    from src.data.dataset import OCTDataset
+    # Adjust the state dict for size mismatches
+    model_state_dict["base_model.fc.3.weight"] = model_state_dict["base_model.fc.3.weight"][:len(label_columns)]
+    model_state_dict["base_model.fc.3.bias"] = model_state_dict["base_model.fc.3.bias"][:len(label_columns)]
 
-    csv_file = Path(data_dir) / "RFMiD_Testing_Labels.csv"
-    images_dir = Path(data_dir) / "images"
-
-    print(f"Looking for CSV file: {csv_file}")
-    if not csv_file.exists():
-        raise FileNotFoundError(f"Test CSV file not found at {csv_file}")
-
-    # Load CSV and link image paths
-    import pandas as pd
-    df = pd.read_csv(csv_file)
-    df['image_path'] = df['ID'].apply(lambda x: str(images_dir / f"{x}.png"))
-
-    # Create dataset and dataloader
-    test_dataset = OCTDataset(df)
-    test_dataloader = DataLoader(test_dataset, batch_size=32, shuffle=False)
-    return test_dataloader
-
-
-def evaluate_model(model, dataloader, device):
-    """
-    Evaluate the model on the test dataset.
-
-    Args:
-        model (torch.nn.Module): The trained model.
-        dataloader (DataLoader): DataLoader for the test dataset.
-        device (str): Device to run the evaluation on.
-
-    Returns:
-        dict: Dictionary of evaluation metrics.
-    """
+    model.load_state_dict(model_state_dict, strict=False)
     model.eval()
-    all_labels = []
+
     all_preds = []
+    all_labels = []
 
     with torch.no_grad():
-        for images, labels in dataloader:
-            images, labels = images.to(device), labels.to(device)
+        for images, labels in test_loader:
+            images = images.to(device)
+            labels = labels.to(device)
 
-            # Forward pass
             outputs = model(images)
-            predictions = (torch.sigmoid(outputs) > 0.5).float()  # Binarize outputs at 0.5
+            preds = torch.sigmoid(outputs) > 0.5  # Threshold for multi-label classification
 
-            # Store predictions and labels
-            all_labels.append(labels.cpu())
-            all_preds.append(predictions.cpu())
+            all_preds.append(preds.cpu().numpy())
+            all_labels.append(labels.cpu().numpy())
 
-    # Convert to numpy arrays
-    all_labels = torch.cat(all_labels).numpy()
-    all_preds = torch.cat(all_preds).numpy()
+    all_preds = np.vstack(all_preds)
+    all_labels = np.vstack(all_labels)
 
-    # Calculate metrics
-    accuracy = accuracy_score(all_labels, all_preds)
-    precision = precision_score(all_labels, all_preds, average="macro")
-    recall = recall_score(all_labels, all_preds, average="macro")
-    f1 = f1_score(all_labels, all_preds, average="macro")
+    # Compute metrics
+    print("Classification Report:")
+    print(classification_report(all_labels, all_preds, target_names=label_columns))
 
-    return {"accuracy": accuracy, "precision": precision, "recall": recall, "f1_score": f1}
+    # Confusion Matrix (for single-label classification or dominant label in multi-label)
+    cm = confusion_matrix(all_labels.argmax(axis=1), all_preds.argmax(axis=1))
+    plot_confusion_matrix(cm, label_columns)
 
+    # Compute ROC-AUC if applicable
+    if len(label_columns) > 1:
+        roc_auc = roc_auc_score(all_labels, all_preds, average='macro')
+        print(f"ROC-AUC Score: {roc_auc:.4f}")
 
+# Plot confusion matrix
+def plot_confusion_matrix(cm, labels):
+    plt.figure(figsize=(10, 8))
+    sns.heatmap(cm, annot=True, fmt="d", cmap="Blues", xticklabels=labels, yticklabels=labels)
+    plt.xlabel("Predicted Labels")
+    plt.ylabel("True Labels")
+    plt.title("Confusion Matrix")
+    plt.show()
+
+# Main execution
 if __name__ == "__main__":
-    data_dir = "../../data/test"
-    model_path = "../../model/oct_model.pth"
-    device = "cuda" if torch.cuda.is_available() else "cpu"
+    # Configurations
+    model_path = "../../model/oct_model.pth"  # Path to your best saved model
+    data_dir = "../../data"  # Adjust to your data directory
+    label_columns = ['DR', 'ARMD', 'MH', 'DN', 'MYA', 'BRVO', 'TSLN', 'ERM', 'LS', 'MS',
+                     'CSR', 'ODC', 'CRVO', 'TV', 'AH', 'ODP', 'ODE', 'ST', 'AION', 'PT',
+                     'RT', 'RS', 'CRS', 'EDN', 'RPEC', 'MHL', 'RP', 'OTHER']  # Adjust this list as needed
+    batch_size = 10
+    device = torch.device("cuda" if torch.cuda.is_available() else "cpu")
 
-    # Load the test data
-    print("Loading test data...")
-    test_dataloader = load_test_data()
+    # Load test data
+    transform = Compose([Resize((224, 224)), ToTensor()])
+    data = load_data(data_dir)
+    test_data = data[data["split"] == "test"]
+    test_dataset = OCTDataset(test_data, label_columns, transform=transform)
+    test_loader = DataLoader(test_dataset, batch_size=batch_size, shuffle=False)
 
-    # Load the model
-    print("Loading model...")
-    model = OCTModel(num_classes=28)  # Adjust based on the number of disease classes
-    model.load_state_dict(torch.load(model_path))
-    model.to(device)
-
-    # Evaluate the model
-    print("Evaluating model...")
-    metrics = evaluate_model(model, test_dataloader, device)
-
-    # Print evaluation metrics
-    print("\nEvaluation Metrics:")
-    for metric, value in metrics.items():
-        print(f"{metric.capitalize()}: {value:.4f}")
+    # Evaluate model
+    evaluate_model(model_path, test_loader, label_columns, device)
