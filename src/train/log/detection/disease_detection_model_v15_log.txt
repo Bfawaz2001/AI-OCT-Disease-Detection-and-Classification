@@ -1,0 +1,40 @@
+"C:\Users\Bilal Fawaz\Desktop\OCT-AI-GUI\.venv\Scripts\python.exe" "C:\Users\Bilal Fawaz\Desktop\OCT-AI-GUI\src\train\disease_detection.py"
+2024-12-01 22:44:43,193 - INFO - Using device: cpu
+2024-12-01 22:44:43,193 - INFO - Loading training and validation data...
+2024-12-01 22:44:43,206 - INFO - Class weights: {0: np.float64(2.3940149625935163), 1: np.float64(0.6319947333772219)}
+2024-12-01 22:44:43,209 - INFO - Initializing the OCT Model for disease detection...
+C:\Users\Bilal Fawaz\Desktop\OCT-AI-GUI\.venv\Lib\site-packages\torch\optim\lr_scheduler.py:62: UserWarning: The verbose parameter is deprecated. Please use get_last_lr() to access the learning rate.
+  warnings.warn(
+2024-12-01 22:44:43,294 - INFO - Epoch 1/40
+Training Epoch 1/40: 100%|██████████| 30/30 [03:38<00:00,  7.29s/batch]
+2024-12-01 22:48:21,869 - INFO - Epoch 1/40, Training Loss: 0.2931
+Validation Epoch 1/40: 100%|██████████| 10/10 [00:41<00:00,  4.12s/batch]
+2024-12-01 22:49:03,106 - INFO - Epoch 1/40, Validation Loss: 0.2626
+2024-12-01 22:49:03,165 - INFO - New best model saved with Validation Loss: 0.2626
+2024-12-01 22:49:03,165 - INFO - Epoch 2/40
+Training Epoch 2/40: 100%|██████████| 30/30 [03:26<00:00,  6.87s/batch]
+2024-12-01 22:52:29,269 - INFO - Epoch 2/40, Training Loss: 0.2125
+Validation Epoch 2/40: 100%|██████████| 10/10 [00:40<00:00,  4.09s/batch]
+2024-12-01 22:53:10,132 - INFO - Epoch 2/40, Validation Loss: 0.2752
+2024-12-01 22:53:10,132 - INFO - Epoch 3/40
+Training Epoch 3/40: 100%|██████████| 30/30 [03:27<00:00,  6.92s/batch]
+2024-12-01 22:56:37,644 - INFO - Epoch 3/40, Training Loss: 0.1457
+Validation Epoch 3/40: 100%|██████████| 10/10 [00:41<00:00,  4.13s/batch]
+2024-12-01 22:57:18,904 - INFO - Epoch 3/40, Validation Loss: 0.2345
+2024-12-01 22:57:18,939 - INFO - New best model saved with Validation Loss: 0.2345
+2024-12-01 22:57:18,939 - INFO - Epoch 4/40
+Training Epoch 4/40: 100%|██████████| 30/30 [03:27<00:00,  6.91s/batch]
+2024-12-01 23:00:46,158 - INFO - Epoch 4/40, Training Loss: 0.1115
+Validation Epoch 4/40: 100%|██████████| 10/10 [00:40<00:00,  4.10s/batch]
+2024-12-01 23:01:27,123 - INFO - Epoch 4/40, Validation Loss: 0.2838
+2024-12-01 23:01:27,123 - INFO - Epoch 5/40
+Training Epoch 5/40: 100%|██████████| 30/30 [03:24<00:00,  6.83s/batch]
+2024-12-01 23:04:52,061 - INFO - Epoch 5/40, Training Loss: 0.1035
+Validation Epoch 5/40: 100%|██████████| 10/10 [00:40<00:00,  4.07s/batch]
+2024-12-01 23:05:32,748 - INFO - Epoch 5/40, Validation Loss: 0.2853
+2024-12-01 23:05:32,749 - INFO - Epoch 6/40
+Training Epoch 6/40: 100%|██████████| 30/30 [03:25<00:00,  6.84s/batch]
+2024-12-01 23:08:57,962 - INFO - Epoch 6/40, Training Loss: 0.0786
+Validation Epoch 6/40: 100%|██████████| 10/10 [00:40<00:00,  4.08s/batch]
+2024-12-01 23:09:38,751 - INFO - Epoch 6/40, Validation Loss: 0.4422
+2024-12-01 23:09:38,751 - INFO - Epoch 7/40

@@ -1,0 +1,121 @@
+2024-12-02 12:29:15,896 - INFO - Using device: cpu
+2024-12-02 12:29:15,896 - INFO - Loading training and validation data...
+2024-12-02 12:29:15,904 - INFO - Class weights: tensor([2.5532, 9.6000, 3.0284, 6.9565, 9.5050, 5.1613, 3.4043])
+2024-12-02 12:29:15,907 - INFO - Initializing the OCT Model for classification...
+2024-12-02 12:29:16,012 - INFO - Epoch 1/20
+Training Epoch 1/20: 100%|██████████| 64/64 [03:15<00:00,  3.05s/batch]
+2024-12-02 12:32:31,312 - INFO - Epoch 1/20, Training Loss: 0.9433
+Validation Epoch 1/20: 100%|██████████| 22/22 [00:38<00:00,  1.75s/batch]
+2024-12-02 12:33:09,720 - INFO - Epoch 1/20, Validation Loss: 0.8661, F1 Score: 0.3654
+2024-12-02 12:33:09,747 - INFO - New best model saved with F1 Score: 0.3654
+2024-12-02 12:33:09,747 - INFO - Epoch 2/20
+Training Epoch 2/20: 100%|██████████| 64/64 [03:13<00:00,  3.02s/batch]
+2024-12-02 12:36:23,093 - INFO - Epoch 2/20, Training Loss: 0.8069
+Validation Epoch 2/20: 100%|██████████| 22/22 [00:38<00:00,  1.75s/batch]
+2024-12-02 12:37:01,676 - INFO - Epoch 2/20, Validation Loss: 0.6453, F1 Score: 0.4805
+2024-12-02 12:37:01,696 - INFO - New best model saved with F1 Score: 0.4805
+2024-12-02 12:37:01,697 - INFO - Epoch 3/20
+Training Epoch 3/20: 100%|██████████| 64/64 [03:13<00:00,  3.02s/batch]
+2024-12-02 12:40:14,964 - INFO - Epoch 3/20, Training Loss: 0.6244
+Validation Epoch 3/20: 100%|██████████| 22/22 [00:37<00:00,  1.73s/batch]
+2024-12-02 12:40:52,952 - INFO - Epoch 3/20, Validation Loss: 0.5364, F1 Score: 0.5605
+2024-12-02 12:40:52,973 - INFO - New best model saved with F1 Score: 0.5605
+2024-12-02 12:40:52,973 - INFO - Epoch 4/20
+Training Epoch 4/20: 100%|██████████| 64/64 [03:12<00:00,  3.00s/batch]
+2024-12-02 12:44:05,130 - INFO - Epoch 4/20, Training Loss: 0.5225
+Validation Epoch 4/20: 100%|██████████| 22/22 [00:38<00:00,  1.73s/batch]
+2024-12-02 12:44:43,290 - INFO - Epoch 4/20, Validation Loss: 0.4917, F1 Score: 0.5993
+2024-12-02 12:44:43,316 - INFO - New best model saved with F1 Score: 0.5993
+2024-12-02 12:44:43,316 - INFO - Epoch 5/20
+Training Epoch 5/20: 100%|██████████| 64/64 [03:11<00:00,  3.00s/batch]
+2024-12-02 12:47:55,227 - INFO - Epoch 5/20, Training Loss: 0.4624
+Validation Epoch 5/20: 100%|██████████| 22/22 [00:38<00:00,  1.74s/batch]
+2024-12-02 12:48:33,429 - INFO - Epoch 5/20, Validation Loss: 0.4674, F1 Score: 0.6103
+2024-12-02 12:48:33,450 - INFO - New best model saved with F1 Score: 0.6103
+2024-12-02 12:48:33,450 - INFO - Epoch 6/20
+Training Epoch 6/20: 100%|██████████| 64/64 [03:12<00:00,  3.00s/batch]
+2024-12-02 12:51:45,756 - INFO - Epoch 6/20, Training Loss: 0.4227
+Validation Epoch 6/20: 100%|██████████| 22/22 [00:38<00:00,  1.74s/batch]
+2024-12-02 12:52:24,024 - INFO - Epoch 6/20, Validation Loss: 0.4435, F1 Score: 0.6122
+2024-12-02 12:52:24,045 - INFO - New best model saved with F1 Score: 0.6122
+2024-12-02 12:52:24,045 - INFO - Epoch 7/20
+Training Epoch 7/20: 100%|██████████| 64/64 [03:12<00:00,  3.00s/batch]
+2024-12-02 12:55:36,254 - INFO - Epoch 7/20, Training Loss: 0.4008
+Validation Epoch 7/20: 100%|██████████| 22/22 [00:38<00:00,  1.73s/batch]
+2024-12-02 12:56:14,280 - INFO - Epoch 7/20, Validation Loss: 0.4369, F1 Score: 0.6257
+2024-12-02 12:56:14,300 - INFO - New best model saved with F1 Score: 0.6257
+2024-12-02 12:56:14,300 - INFO - Epoch 8/20
+Training Epoch 8/20: 100%|██████████| 64/64 [03:12<00:00,  3.00s/batch]
+2024-12-02 12:59:26,592 - INFO - Epoch 8/20, Training Loss: 0.3613
+Validation Epoch 8/20: 100%|██████████| 22/22 [00:38<00:00,  1.73s/batch]
+2024-12-02 13:00:04,701 - INFO - Epoch 8/20, Validation Loss: 0.4293, F1 Score: 0.6302
+2024-12-02 13:00:04,721 - INFO - New best model saved with F1 Score: 0.6302
+2024-12-02 13:00:04,721 - INFO - Epoch 9/20
+Training Epoch 9/20: 100%|██████████| 64/64 [03:12<00:00,  3.01s/batch]
+2024-12-02 13:03:17,075 - INFO - Epoch 9/20, Training Loss: 0.3466
+Validation Epoch 9/20: 100%|██████████| 22/22 [00:38<00:00,  1.73s/batch]
+2024-12-02 13:03:55,223 - INFO - Epoch 9/20, Validation Loss: 0.4231, F1 Score: 0.6402
+2024-12-02 13:03:55,243 - INFO - New best model saved with F1 Score: 0.6402
+2024-12-02 13:03:55,243 - INFO - Epoch 10/20
+Training Epoch 10/20: 100%|██████████| 64/64 [03:12<00:00,  3.01s/batch]
+2024-12-02 13:07:07,706 - INFO - Epoch 10/20, Training Loss: 0.3242
+Validation Epoch 10/20: 100%|██████████| 22/22 [00:38<00:00,  1.74s/batch]
+2024-12-02 13:07:45,885 - INFO - Epoch 10/20, Validation Loss: 0.4289, F1 Score: 0.6403
+2024-12-02 13:07:45,910 - INFO - New best model saved with F1 Score: 0.6403
+2024-12-02 13:07:45,910 - INFO - Epoch 11/20
+Training Epoch 11/20: 100%|██████████| 64/64 [03:12<00:00,  3.01s/batch]
+2024-12-02 13:10:58,383 - INFO - Epoch 11/20, Training Loss: 0.3118
+Validation Epoch 11/20: 100%|██████████| 22/22 [00:38<00:00,  1.74s/batch]
+2024-12-02 13:11:36,658 - INFO - Epoch 11/20, Validation Loss: 0.4363, F1 Score: 0.6435
+2024-12-02 13:11:36,679 - INFO - New best model saved with F1 Score: 0.6435
+2024-12-02 13:11:36,679 - INFO - Epoch 12/20
+Training Epoch 12/20: 100%|██████████| 64/64 [03:12<00:00,  3.01s/batch]
+2024-12-02 13:14:49,595 - INFO - Epoch 12/20, Training Loss: 0.2908
+Validation Epoch 12/20: 100%|██████████| 22/22 [00:38<00:00,  1.74s/batch]
+2024-12-02 13:15:27,833 - INFO - Epoch 12/20, Validation Loss: 0.4351, F1 Score: 0.6573
+2024-12-02 13:15:27,858 - INFO - New best model saved with F1 Score: 0.6573
+2024-12-02 13:15:27,858 - INFO - Epoch 13/20
+Training Epoch 13/20: 100%|██████████| 64/64 [03:13<00:00,  3.02s/batch]
+2024-12-02 13:18:41,243 - INFO - Epoch 13/20, Training Loss: 0.2839
+Validation Epoch 13/20: 100%|██████████| 22/22 [00:38<00:00,  1.74s/batch]
+2024-12-02 13:19:19,493 - INFO - Epoch 13/20, Validation Loss: 0.4388, F1 Score: 0.6547
+2024-12-02 13:19:19,493 - INFO - Epoch 14/20
+Training Epoch 14/20: 100%|██████████| 64/64 [03:12<00:00,  3.01s/batch]
+2024-12-02 13:22:31,873 - INFO - Epoch 14/20, Training Loss: 0.2767
+Validation Epoch 14/20: 100%|██████████| 22/22 [00:38<00:00,  1.75s/batch]
+2024-12-02 13:23:10,271 - INFO - Epoch 14/20, Validation Loss: 0.4372, F1 Score: 0.6452
+2024-12-02 13:23:10,271 - INFO - Epoch 15/20
+Training Epoch 15/20: 100%|██████████| 64/64 [03:12<00:00,  3.01s/batch]
+2024-12-02 13:26:22,895 - INFO - Epoch 15/20, Training Loss: 0.2748
+Validation Epoch 15/20: 100%|██████████| 22/22 [00:38<00:00,  1.73s/batch]
+2024-12-02 13:27:00,988 - INFO - Epoch 15/20, Validation Loss: 0.4301, F1 Score: 0.6586
+2024-12-02 13:27:01,008 - INFO - New best model saved with F1 Score: 0.6586
+2024-12-02 13:27:01,009 - INFO - Epoch 16/20
+Training Epoch 16/20: 100%|██████████| 64/64 [03:12<00:00,  3.01s/batch]
+2024-12-02 13:30:13,780 - INFO - Epoch 16/20, Training Loss: 0.2613
+Validation Epoch 16/20: 100%|██████████| 22/22 [00:38<00:00,  1.74s/batch]
+2024-12-02 13:30:52,113 - INFO - Epoch 16/20, Validation Loss: 0.4371, F1 Score: 0.6587
+2024-12-02 13:30:52,133 - INFO - New best model saved with F1 Score: 0.6587
+2024-12-02 13:30:52,133 - INFO - Epoch 17/20
+Training Epoch 17/20: 100%|██████████| 64/64 [03:12<00:00,  3.01s/batch]
+2024-12-02 13:34:04,945 - INFO - Epoch 17/20, Training Loss: 0.2525
+Validation Epoch 17/20: 100%|██████████| 22/22 [00:38<00:00,  1.73s/batch]
+2024-12-02 13:34:43,054 - INFO - Epoch 17/20, Validation Loss: 0.4397, F1 Score: 0.6612
+2024-12-02 13:34:43,424 - INFO - New best model saved with F1 Score: 0.6612
+2024-12-02 13:34:43,425 - INFO - Epoch 18/20
+Training Epoch 18/20: 100%|██████████| 64/64 [03:13<00:00,  3.03s/batch]
+2024-12-02 13:37:57,143 - INFO - Epoch 18/20, Training Loss: 0.2593
+Validation Epoch 18/20: 100%|██████████| 22/22 [00:38<00:00,  1.74s/batch]
+2024-12-02 13:38:35,404 - INFO - Epoch 18/20, Validation Loss: 0.4439, F1 Score: 0.6615
+2024-12-02 13:38:35,425 - INFO - New best model saved with F1 Score: 0.6615
+2024-12-02 13:38:35,425 - INFO - Epoch 19/20
+Training Epoch 19/20: 100%|██████████| 64/64 [03:13<00:00,  3.02s/batch]
+2024-12-02 13:41:48,956 - INFO - Epoch 19/20, Training Loss: 0.2440
+Validation Epoch 19/20: 100%|██████████| 22/22 [00:38<00:00,  1.74s/batch]
+2024-12-02 13:42:27,306 - INFO - Epoch 19/20, Validation Loss: 0.4513, F1 Score: 0.6590
+2024-12-02 13:42:27,306 - INFO - Epoch 20/20
+Training Epoch 20/20: 100%|██████████| 64/64 [03:12<00:00,  3.01s/batch]
+2024-12-02 13:45:39,927 - INFO - Epoch 20/20, Training Loss: 0.2452
+Validation Epoch 20/20: 100%|██████████| 22/22 [00:38<00:00,  1.74s/batch]
+2024-12-02 13:46:18,249 - INFO - Epoch 20/20, Validation Loss: 0.4493, F1 Score: 0.6623
+2024-12-02 13:46:18,269 - INFO - New best model saved with F1 Score: 0.6623

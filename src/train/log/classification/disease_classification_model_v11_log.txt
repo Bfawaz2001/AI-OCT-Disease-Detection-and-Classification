@@ -1,0 +1,216 @@
+2024-12-02 06:46:19,439 - INFO - Using device: cpu
+2024-12-02 06:46:19,439 - INFO - Loading training and validation data...
+2024-12-02 06:46:19,444 - INFO - Inferred label columns for classification: ['DR', 'ARMD', 'MH', 'DN', 'MYA', 'TSLN', 'ODC']
+2024-12-02 06:46:19,444 - INFO - Number of classes: 7
+2024-12-02 06:46:19,458 - INFO - Class weights: tensor([2.5532, 9.6000, 3.0284, 6.9565, 9.5050, 5.1613, 3.4043])
+2024-12-02 06:46:19,461 - INFO - Initializing the OCT Model for classification...
+C:\Users\Bilal Fawaz\Desktop\OCT-AI-GUI\.venv\Lib\site-packages\torch\optim\lr_scheduler.py:62: UserWarning: The verbose parameter is deprecated. Please use get_last_lr() to access the learning rate.
+  warnings.warn(
+2024-12-02 06:46:19,545 - INFO - Epoch 1/50
+Training Epoch 1/50: 100%|██████████| 60/60 [03:20<00:00,  3.35s/it]
+2024-12-02 06:49:40,487 - INFO - Epoch 1/50, Training Loss: 0.7853
+Validation Epoch 1/50: 100%|██████████| 20/20 [00:38<00:00,  1.92s/it]
+2024-12-02 06:50:18,812 - INFO - Epoch 1/50, Validation Loss: 0.6088
+2024-12-02 06:50:18,812 - INFO - Epoch 2/50
+Training Epoch 2/50: 100%|██████████| 60/60 [03:15<00:00,  3.26s/it]
+2024-12-02 06:53:34,448 - INFO - Epoch 2/50, Training Loss: 0.6104
+Validation Epoch 2/50: 100%|██████████| 20/20 [00:38<00:00,  1.92s/it]
+2024-12-02 06:54:12,756 - INFO - Epoch 2/50, Validation Loss: 0.6265
+2024-12-02 06:54:12,756 - INFO - Epoch 3/50
+Training Epoch 3/50: 100%|██████████| 60/60 [03:12<00:00,  3.21s/it]
+2024-12-02 06:57:25,305 - INFO - Epoch 3/50, Training Loss: 0.5787
+Validation Epoch 3/50: 100%|██████████| 20/20 [00:38<00:00,  1.91s/it]
+2024-12-02 06:58:03,488 - INFO - Epoch 3/50, Validation Loss: 0.6288
+2024-12-02 06:58:03,488 - INFO - Epoch 4/50
+Training Epoch 4/50: 100%|██████████| 60/60 [03:12<00:00,  3.21s/it]
+2024-12-02 07:01:16,232 - INFO - Epoch 4/50, Training Loss: 0.5490
+Validation Epoch 4/50: 100%|██████████| 20/20 [00:38<00:00,  1.91s/it]
+2024-12-02 07:01:54,404 - INFO - Epoch 4/50, Validation Loss: 0.6003
+2024-12-02 07:01:54,404 - INFO - Epoch 5/50
+Training Epoch 5/50: 100%|██████████| 60/60 [03:13<00:00,  3.23s/it]
+2024-12-02 07:05:08,151 - INFO - Epoch 5/50, Training Loss: 0.5152
+Validation Epoch 5/50: 100%|██████████| 20/20 [00:38<00:00,  1.92s/it]
+2024-12-02 07:05:46,453 - INFO - Epoch 5/50, Validation Loss: 0.5597
+2024-12-02 07:05:46,453 - INFO - Epoch 6/50
+Training Epoch 6/50: 100%|██████████| 60/60 [03:13<00:00,  3.23s/it]
+2024-12-02 07:09:00,123 - INFO - Epoch 6/50, Training Loss: 0.4686
+Validation Epoch 6/50: 100%|██████████| 20/20 [00:38<00:00,  1.92s/it]
+2024-12-02 07:09:38,620 - INFO - Epoch 6/50, Validation Loss: 0.5988
+2024-12-02 07:09:38,620 - INFO - Epoch 7/50
+Training Epoch 7/50: 100%|██████████| 60/60 [03:13<00:00,  3.22s/it]
+2024-12-02 07:12:51,782 - INFO - Epoch 7/50, Training Loss: 0.4825
+Validation Epoch 7/50: 100%|██████████| 20/20 [00:38<00:00,  1.91s/it]
+2024-12-02 07:13:30,003 - INFO - Epoch 7/50, Validation Loss: 0.5946
+2024-12-02 07:13:30,003 - INFO - Epoch 8/50
+Training Epoch 8/50: 100%|██████████| 60/60 [03:14<00:00,  3.25s/it]
+2024-12-02 07:16:44,723 - INFO - Epoch 8/50, Training Loss: 0.4634
+Validation Epoch 8/50: 100%|██████████| 20/20 [00:38<00:00,  1.92s/it]
+2024-12-02 07:17:23,132 - INFO - Epoch 8/50, Validation Loss: 0.5811
+2024-12-02 07:17:23,132 - INFO - Epoch 9/50
+Training Epoch 9/50: 100%|██████████| 60/60 [03:13<00:00,  3.22s/it]
+2024-12-02 07:20:36,439 - INFO - Epoch 9/50, Training Loss: 0.4427
+Validation Epoch 9/50: 100%|██████████| 20/20 [00:38<00:00,  1.92s/it]
+2024-12-02 07:21:14,764 - INFO - Epoch 9/50, Validation Loss: 0.5792
+2024-12-02 07:21:14,765 - INFO - Epoch 10/50
+Training Epoch 10/50: 100%|██████████| 60/60 [03:14<00:00,  3.23s/it]
+2024-12-02 07:24:28,769 - INFO - Epoch 10/50, Training Loss: 0.4107
+Validation Epoch 10/50: 100%|██████████| 20/20 [00:38<00:00,  1.92s/it]
+2024-12-02 07:25:07,104 - INFO - Epoch 10/50, Validation Loss: 0.6035
+2024-12-02 07:25:07,104 - INFO - Epoch 11/50
+Training Epoch 11/50: 100%|██████████| 60/60 [03:13<00:00,  3.22s/it]
+2024-12-02 07:28:20,424 - INFO - Epoch 11/50, Training Loss: 0.3830
+Validation Epoch 11/50: 100%|██████████| 20/20 [00:38<00:00,  1.91s/it]
+2024-12-02 07:28:58,625 - INFO - Epoch 11/50, Validation Loss: 0.6320
+2024-12-02 07:28:58,625 - INFO - Epoch 12/50
+Training Epoch 12/50: 100%|██████████| 60/60 [03:12<00:00,  3.21s/it]
+2024-12-02 07:32:11,520 - INFO - Epoch 12/50, Training Loss: 0.3842
+Validation Epoch 12/50: 100%|██████████| 20/20 [00:38<00:00,  1.92s/it]
+2024-12-02 07:32:49,926 - INFO - Epoch 12/50, Validation Loss: 0.4987
+2024-12-02 07:32:49,926 - INFO - Epoch 13/50
+Training Epoch 13/50: 100%|██████████| 60/60 [03:13<00:00,  3.22s/it]
+2024-12-02 07:36:03,292 - INFO - Epoch 13/50, Training Loss: 0.3154
+Validation Epoch 13/50: 100%|██████████| 20/20 [00:38<00:00,  1.92s/it]
+2024-12-02 07:36:41,644 - INFO - Epoch 13/50, Validation Loss: 0.4713
+2024-12-02 07:36:41,644 - INFO - Epoch 14/50
+Training Epoch 14/50: 100%|██████████| 60/60 [03:13<00:00,  3.23s/it]
+2024-12-02 07:39:55,623 - INFO - Epoch 14/50, Training Loss: 0.2841
+Validation Epoch 14/50: 100%|██████████| 20/20 [00:38<00:00,  1.92s/it]
+2024-12-02 07:40:33,955 - INFO - Epoch 14/50, Validation Loss: 0.4772
+2024-12-02 07:40:33,955 - INFO - Epoch 15/50
+Training Epoch 15/50: 100%|██████████| 60/60 [03:13<00:00,  3.22s/it]
+2024-12-02 07:43:47,045 - INFO - Epoch 15/50, Training Loss: 0.2590
+Validation Epoch 15/50: 100%|██████████| 20/20 [00:38<00:00,  1.92s/it]
+2024-12-02 07:44:25,372 - INFO - Epoch 15/50, Validation Loss: 0.4565
+2024-12-02 07:44:25,372 - INFO - Epoch 16/50
+Training Epoch 16/50: 100%|██████████| 60/60 [03:13<00:00,  3.23s/it]
+2024-12-02 07:47:39,197 - INFO - Epoch 16/50, Training Loss: 0.2434
+Validation Epoch 16/50: 100%|██████████| 20/20 [00:38<00:00,  1.92s/it]
+2024-12-02 07:48:17,532 - INFO - Epoch 16/50, Validation Loss: 0.4593
+2024-12-02 07:48:17,532 - INFO - Epoch 17/50
+Training Epoch 17/50: 100%|██████████| 60/60 [03:13<00:00,  3.23s/it]
+2024-12-02 07:51:31,455 - INFO - Epoch 17/50, Training Loss: 0.2325
+Validation Epoch 17/50: 100%|██████████| 20/20 [00:38<00:00,  1.92s/it]
+2024-12-02 07:52:09,810 - INFO - Epoch 17/50, Validation Loss: 0.4523
+2024-12-02 07:52:09,810 - INFO - Epoch 18/50
+Training Epoch 18/50: 100%|██████████| 60/60 [03:14<00:00,  3.24s/it]
+2024-12-02 07:55:24,086 - INFO - Epoch 18/50, Training Loss: 0.2276
+Validation Epoch 18/50: 100%|██████████| 20/20 [00:38<00:00,  1.92s/it]
+2024-12-02 07:56:02,419 - INFO - Epoch 18/50, Validation Loss: 0.4700
+2024-12-02 07:56:02,419 - INFO - Epoch 19/50
+Training Epoch 19/50: 100%|██████████| 60/60 [03:13<00:00,  3.22s/it]
+2024-12-02 07:59:15,657 - INFO - Epoch 19/50, Training Loss: 0.2206
+Validation Epoch 19/50: 100%|██████████| 20/20 [00:38<00:00,  1.91s/it]
+2024-12-02 07:59:53,924 - INFO - Epoch 19/50, Validation Loss: 0.4745
+2024-12-02 07:59:53,924 - INFO - Epoch 20/50
+Training Epoch 20/50: 100%|██████████| 60/60 [03:13<00:00,  3.23s/it]
+2024-12-02 08:03:07,819 - INFO - Epoch 20/50, Training Loss: 0.2151
+Validation Epoch 20/50: 100%|██████████| 20/20 [00:38<00:00,  1.91s/it]
+2024-12-02 08:03:45,993 - INFO - Epoch 20/50, Validation Loss: 0.4878
+2024-12-02 08:03:45,993 - INFO - Epoch 21/50
+Training Epoch 21/50: 100%|██████████| 60/60 [03:14<00:00,  3.23s/it]
+2024-12-02 08:07:00,021 - INFO - Epoch 21/50, Training Loss: 0.2088
+Validation Epoch 21/50: 100%|██████████| 20/20 [00:38<00:00,  1.91s/it]
+2024-12-02 08:07:38,220 - INFO - Epoch 21/50, Validation Loss: 0.4940
+2024-12-02 08:07:38,220 - INFO - Epoch 22/50
+Training Epoch 22/50: 100%|██████████| 60/60 [03:14<00:00,  3.23s/it]
+2024-12-02 08:10:52,306 - INFO - Epoch 22/50, Training Loss: 0.2014
+Validation Epoch 22/50: 100%|██████████| 20/20 [00:38<00:00,  1.91s/it]
+2024-12-02 08:11:30,510 - INFO - Epoch 22/50, Validation Loss: 0.4719
+2024-12-02 08:11:30,511 - INFO - Epoch 23/50
+Training Epoch 23/50: 100%|██████████| 60/60 [03:13<00:00,  3.23s/it]
+2024-12-02 08:14:44,279 - INFO - Epoch 23/50, Training Loss: 0.1941
+Validation Epoch 23/50: 100%|██████████| 20/20 [00:38<00:00,  1.91s/it]
+2024-12-02 08:15:22,438 - INFO - Epoch 23/50, Validation Loss: 0.4942
+2024-12-02 08:15:22,438 - INFO - Epoch 24/50
+Training Epoch 24/50: 100%|██████████| 60/60 [03:13<00:00,  3.23s/it]
+2024-12-02 08:18:36,323 - INFO - Epoch 24/50, Training Loss: 0.1859
+Validation Epoch 24/50: 100%|██████████| 20/20 [00:38<00:00,  1.91s/it]
+2024-12-02 08:19:14,572 - INFO - Epoch 24/50, Validation Loss: 0.4883
+2024-12-02 08:19:14,572 - INFO - Epoch 25/50
+Training Epoch 25/50: 100%|██████████| 60/60 [03:13<00:00,  3.23s/it]
+2024-12-02 08:22:28,275 - INFO - Epoch 25/50, Training Loss: 0.1854
+Validation Epoch 25/50: 100%|██████████| 20/20 [00:38<00:00,  1.91s/it]
+2024-12-02 08:23:06,519 - INFO - Epoch 25/50, Validation Loss: 0.4928
+2024-12-02 08:23:06,519 - INFO - Epoch 26/50
+Training Epoch 26/50: 100%|██████████| 60/60 [03:13<00:00,  3.22s/it]
+2024-12-02 08:26:19,677 - INFO - Epoch 26/50, Training Loss: 0.1905
+Validation Epoch 26/50: 100%|██████████| 20/20 [00:38<00:00,  1.92s/it]
+2024-12-02 08:26:58,031 - INFO - Epoch 26/50, Validation Loss: 0.4931
+2024-12-02 08:26:58,031 - INFO - Epoch 27/50
+Training Epoch 27/50: 100%|██████████| 60/60 [03:14<00:00,  3.25s/it]
+2024-12-02 08:30:12,766 - INFO - Epoch 27/50, Training Loss: 0.1883
+Validation Epoch 27/50: 100%|██████████| 20/20 [00:38<00:00,  1.91s/it]
+2024-12-02 08:30:50,943 - INFO - Epoch 27/50, Validation Loss: 0.4776
+2024-12-02 08:30:50,943 - INFO - Epoch 28/50
+Training Epoch 28/50: 100%|██████████| 60/60 [03:14<00:00,  3.24s/it]
+2024-12-02 08:34:05,149 - INFO - Epoch 28/50, Training Loss: 0.1793
+Validation Epoch 28/50: 100%|██████████| 20/20 [00:38<00:00,  1.92s/it]
+2024-12-02 08:34:43,514 - INFO - Epoch 28/50, Validation Loss: 0.4975
+2024-12-02 08:34:43,514 - INFO - Epoch 29/50
+Training Epoch 29/50: 100%|██████████| 60/60 [03:14<00:00,  3.25s/it]
+2024-12-02 08:37:58,373 - INFO - Epoch 29/50, Training Loss: 0.1748
+Validation Epoch 29/50: 100%|██████████| 20/20 [00:38<00:00,  1.91s/it]
+2024-12-02 08:38:36,547 - INFO - Epoch 29/50, Validation Loss: 0.5024
+2024-12-02 08:38:36,547 - INFO - Epoch 30/50
+Training Epoch 30/50: 100%|██████████| 60/60 [03:14<00:00,  3.24s/it]
+2024-12-02 08:41:50,811 - INFO - Epoch 30/50, Training Loss: 0.1818
+Validation Epoch 30/50: 100%|██████████| 20/20 [00:38<00:00,  1.91s/it]
+2024-12-02 08:42:29,102 - INFO - Epoch 30/50, Validation Loss: 0.4980
+2024-12-02 08:42:29,102 - INFO - Epoch 31/50
+Training Epoch 31/50: 100%|██████████| 60/60 [03:14<00:00,  3.24s/it]
+2024-12-02 08:45:43,327 - INFO - Epoch 31/50, Training Loss: 0.1789
+Validation Epoch 31/50: 100%|██████████| 20/20 [00:38<00:00,  1.91s/it]
+2024-12-02 08:46:21,608 - INFO - Epoch 31/50, Validation Loss: 0.5080
+2024-12-02 08:46:21,609 - INFO - Epoch 32/50
+Training Epoch 32/50: 100%|██████████| 60/60 [03:15<00:00,  3.25s/it]
+2024-12-02 08:49:36,800 - INFO - Epoch 32/50, Training Loss: 0.1898
+Validation Epoch 32/50: 100%|██████████| 20/20 [00:38<00:00,  1.94s/it]
+2024-12-02 08:50:15,588 - INFO - Epoch 32/50, Validation Loss: 0.4957
+2024-12-02 08:50:15,589 - INFO - Epoch 33/50
+Training Epoch 33/50: 100%|██████████| 60/60 [03:16<00:00,  3.28s/it]
+2024-12-02 08:53:32,270 - INFO - Epoch 33/50, Training Loss: 0.1850
+Validation Epoch 33/50: 100%|██████████| 20/20 [00:38<00:00,  1.91s/it]
+2024-12-02 08:54:10,511 - INFO - Epoch 33/50, Validation Loss: 0.4906
+2024-12-02 08:54:10,511 - INFO - Epoch 34/50
+Training Epoch 34/50: 100%|██████████| 60/60 [03:14<00:00,  3.24s/it]
+2024-12-02 08:57:25,001 - INFO - Epoch 34/50, Training Loss: 0.1810
+Validation Epoch 34/50: 100%|██████████| 20/20 [00:38<00:00,  1.91s/it]
+2024-12-02 08:58:03,264 - INFO - Epoch 34/50, Validation Loss: 0.4993
+2024-12-02 08:58:03,264 - INFO - Epoch 35/50
+Training Epoch 35/50: 100%|██████████| 60/60 [03:11<00:00,  3.20s/it]
+2024-12-02 09:01:15,141 - INFO - Epoch 35/50, Training Loss: 0.1776
+Validation Epoch 35/50: 100%|██████████| 20/20 [00:38<00:00,  1.91s/it]
+2024-12-02 09:01:53,415 - INFO - Epoch 35/50, Validation Loss: 0.5074
+2024-12-02 09:01:53,415 - INFO - Epoch 36/50
+Training Epoch 36/50: 100%|██████████| 60/60 [03:13<00:00,  3.22s/it]
+2024-12-02 09:05:06,495 - INFO - Epoch 36/50, Training Loss: 0.1736
+Validation Epoch 36/50: 100%|██████████| 20/20 [00:38<00:00,  1.90s/it]
+2024-12-02 09:05:44,581 - INFO - Epoch 36/50, Validation Loss: 0.4940
+2024-12-02 09:05:44,581 - INFO - Epoch 37/50
+Training Epoch 37/50: 100%|██████████| 60/60 [03:13<00:00,  3.22s/it]
+2024-12-02 09:08:57,582 - INFO - Epoch 37/50, Training Loss: 0.1763
+Validation Epoch 37/50: 100%|██████████| 20/20 [00:38<00:00,  1.90s/it]
+2024-12-02 09:09:35,635 - INFO - Epoch 37/50, Validation Loss: 0.4938
+2024-12-02 09:09:35,635 - INFO - Epoch 38/50
+Training Epoch 38/50: 100%|██████████| 60/60 [03:13<00:00,  3.22s/it]
+2024-12-02 09:12:48,920 - INFO - Epoch 38/50, Training Loss: 0.1736
+Validation Epoch 38/50: 100%|██████████| 20/20 [00:38<00:00,  1.90s/it]
+2024-12-02 09:13:26,959 - INFO - Epoch 38/50, Validation Loss: 0.5017
+2024-12-02 09:13:26,960 - INFO - Epoch 39/50
+Training Epoch 39/50: 100%|██████████| 60/60 [03:13<00:00,  3.22s/it]
+2024-12-02 09:16:40,029 - INFO - Epoch 39/50, Training Loss: 0.1829
+Validation Epoch 39/50: 100%|██████████| 20/20 [00:38<00:00,  1.91s/it]
+2024-12-02 09:17:18,153 - INFO - Epoch 39/50, Validation Loss: 0.5107
+2024-12-02 09:17:18,153 - INFO - Epoch 40/50
+Training Epoch 40/50: 100%|██████████| 60/60 [03:13<00:00,  3.22s/it]
+2024-12-02 09:20:31,188 - INFO - Epoch 40/50, Training Loss: 0.1755
+Validation Epoch 40/50: 100%|██████████| 20/20 [00:38<00:00,  1.90s/it]
+2024-12-02 09:21:09,288 - INFO - Epoch 40/50, Validation Loss: 0.4917
+2024-12-02 09:21:09,288 - INFO - Epoch 41/50
+Training Epoch 41/50: 100%|██████████| 60/60 [03:13<00:00,  3.22s/it]
+2024-12-02 09:24:22,556 - INFO - Epoch 41/50, Training Loss: 0.1780
+Validation Epoch 41/50: 100%|██████████| 20/20 [00:38<00:00,  1.91s/it]
+2024-12-02 09:25:00,703 - INFO - Epoch 41/50, Validation Loss: 0.4863
+2024-12-02 09:25:00,704 - INFO - Epoch 42/50
+Training Epoch 42/50: 100%|██████████| 60/60 [03:13<00:00,  3.23s/it]
+2024-12-02 09:28:14,261 - INFO - Epoch 42/50, Training Loss: 0.1803
