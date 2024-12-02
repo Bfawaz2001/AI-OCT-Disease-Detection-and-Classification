@@ -1,3 +1,6 @@
+import os
+
+import cv2
 import pandas as pd
 import numpy as np
 from pathlib import Path
@@ -6,6 +9,9 @@ import torch
 from torch.utils.data import Dataset
 from torchvision.transforms import Compose, Resize, ToTensor
 import logging
+from torchvision.transforms import Compose, Resize, ToTensor, RandomRotation, ColorJitter, RandomHorizontalFlip, RandomVerticalFlip
+from torchvision.transforms.functional import gaussian_blur
+import random
 
 # Configure logging
 logging.basicConfig(
@@ -13,44 +19,34 @@ logging.basicConfig(
     format="%(asctime)s - %(levelname)s - %(message)s"
 )
 
+
 class OCTDataset(Dataset):
-    def __init__(self, dataframe, label_columns, transform=None, target_size=(224, 224)):
-        self.dataframe = dataframe
+    def __init__(self, data, label_columns, transform=None, image_dir=None):
+        self.data = data
         self.label_columns = label_columns
         self.transform = transform
-        self.target_size = target_size
+        self.image_dir = image_dir
 
     def __len__(self):
-        return len(self.dataframe)
+        return len(self.data)
 
     def __getitem__(self, idx):
-        row = self.dataframe.iloc[idx]
-        image_path = str(row['image_path']).strip()
+        row = self.data.iloc[idx]
+        image_path = os.path.join(self.image_dir, f"{row['ID']}.png")
+        image = cv2.imread(image_path)
 
-        # Debug log instead of print
-        logging.debug(f"Resolved image path: {image_path}")
-
-        if not Path(image_path).exists():
+        if image is None:
             raise FileNotFoundError(f"Image not found at {image_path}")
 
-        labels = row[self.label_columns].values.astype(np.float32)
+        image = cv2.cvtColor(image, cv2.COLOR_BGR2RGB)  # Convert BGR to RGB
+        image = np.array(image)  # Ensure it is a NumPy array
 
-        try:
-            image = Image.open(image_path).convert("RGB")
-        except Exception as e:
-            raise ValueError(f"Error opening image {image_path}: {e}")
-
-        # Resize the image to target size
         if self.transform:
-            image = self.transform(image)
-        else:
-            image = Compose([Resize(self.target_size), ToTensor()])(image)
+            transformed = self.transform(image=image)
+            image = transformed["image"]  # Albumentations expects a NumPy array
 
-        # Normalize image (if needed, add normalization later)
-        image = image / 255.0  # Scale pixel values to [0, 1]
-        labels = torch.tensor(labels, dtype=torch.float32)
-
-        return image, labels
+        labels = row[self.label_columns].values.astype(float)  # Convert labels to float
+        return image, torch.tensor(labels, dtype=torch.float)
 
 
 def load_data(data_dir):
