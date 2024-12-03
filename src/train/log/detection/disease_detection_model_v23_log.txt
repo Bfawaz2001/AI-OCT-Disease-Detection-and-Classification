@@ -1,0 +1,54 @@
+2024-12-03 07:23:42,375 - INFO - Using device: cpu
+2024-12-03 07:23:42,375 - INFO - Loading training and validation data...
+2024-12-03 07:23:42,461 - INFO - Class weights: [2.39401496 0.63199473]
+2024-12-03 07:23:42,532 - INFO - Initializing the OCT Model for disease detection...
+2024-12-03 07:23:42,718 - INFO - Epoch 1/30
+Training Epoch 1/30: 100%|██████████| 16/16 [03:24<00:00, 12.76s/batch]
+2024-12-03 07:27:06,910 - INFO - Epoch 1/30, Training Loss: 0.0869
+Evaluating: 100%|██████████| 6/6 [00:40<00:00,  6.69s/batch]
+2024-12-03 07:27:47,072 - INFO - Epoch 1/30, Validation Loss: 0.0549, Precision: 0.9502, Recall: 0.8676, F1 Score: 0.9070, AUC: 0.9263
+2024-12-03 07:27:47,103 - INFO - New best model saved with F1 Score: 0.9070
+2024-12-03 07:27:47,103 - INFO - Epoch 2/30
+Training Epoch 2/30: 100%|██████████| 16/16 [03:26<00:00, 12.91s/batch]
+2024-12-03 07:31:13,707 - INFO - Epoch 2/30, Training Loss: 0.0498
+Evaluating: 100%|██████████| 6/6 [00:40<00:00,  6.70s/batch]
+2024-12-03 07:31:53,949 - INFO - Epoch 2/30, Validation Loss: 0.0693, Precision: 0.8529, Recall: 0.9743, F1 Score: 0.9096, AUC: 0.9389
+2024-12-03 07:31:53,973 - INFO - New best model saved with F1 Score: 0.9096
+2024-12-03 07:31:53,973 - INFO - Epoch 3/30
+Training Epoch 3/30: 100%|██████████| 16/16 [03:26<00:00, 12.93s/batch]
+2024-12-03 07:35:20,932 - INFO - Epoch 3/30, Training Loss: 0.0421
+Evaluating: 100%|██████████| 6/6 [00:40<00:00,  6.72s/batch]
+2024-12-03 07:36:01,242 - INFO - Epoch 3/30, Validation Loss: 0.0444, Precision: 0.9675, Recall: 0.8834, F1 Score: 0.9236, AUC: 0.9442
+2024-12-03 07:36:01,264 - INFO - New best model saved with F1 Score: 0.9236
+2024-12-03 07:36:01,264 - INFO - Epoch 4/30
+Training Epoch 4/30: 100%|██████████| 16/16 [03:26<00:00, 12.91s/batch]
+2024-12-03 07:39:27,795 - INFO - Epoch 4/30, Training Loss: 0.0393
+Evaluating: 100%|██████████| 6/6 [00:40<00:00,  6.70s/batch]
+2024-12-03 07:40:08,017 - INFO - Epoch 4/30, Validation Loss: 0.0476, Precision: 0.9140, Recall: 0.9447, F1 Score: 0.9291, AUC: 0.9480
+2024-12-03 07:40:08,049 - INFO - New best model saved with F1 Score: 0.9291
+2024-12-03 07:40:08,049 - INFO - Epoch 5/30
+Training Epoch 5/30: 100%|██████████| 16/16 [03:26<00:00, 12.91s/batch]
+2024-12-03 07:43:34,576 - INFO - Epoch 5/30, Training Loss: 0.0357
+Evaluating: 100%|██████████| 6/6 [00:40<00:00,  6.71s/batch]
+2024-12-03 07:44:14,815 - INFO - Epoch 5/30, Validation Loss: 0.0521, Precision: 0.8907, Recall: 0.9506, F1 Score: 0.9197, AUC: 0.9264
+2024-12-03 07:44:14,816 - INFO - Epoch 6/30
+Training Epoch 6/30: 100%|██████████| 16/16 [03:27<00:00, 12.95s/batch]
+2024-12-03 07:47:41,948 - INFO - Epoch 6/30, Training Loss: 0.0314
+Evaluating: 100%|██████████| 6/6 [00:40<00:00,  6.77s/batch]
+2024-12-03 07:48:22,574 - INFO - Epoch 6/30, Validation Loss: 0.0638, Precision: 0.9389, Recall: 0.9111, F1 Score: 0.9248, AUC: 0.9394
+2024-12-03 07:48:22,574 - INFO - Epoch 7/30
+Training Epoch 7/30: 100%|██████████| 16/16 [03:38<00:00, 13.68s/batch]
+2024-12-03 07:52:01,515 - INFO - Epoch 7/30, Training Loss: 0.0261
+Evaluating: 100%|██████████| 6/6 [00:40<00:00,  6.82s/batch]
+2024-12-03 07:52:42,474 - INFO - Epoch 7/30, Validation Loss: 0.0710, Precision: 0.9683, Recall: 0.8439, F1 Score: 0.9018, AUC: 0.9324
+2024-12-03 07:52:42,474 - INFO - Epoch 8/30
+Training Epoch 8/30: 100%|██████████| 16/16 [03:26<00:00, 12.90s/batch]
+2024-12-03 07:56:08,926 - INFO - Epoch 8/30, Training Loss: 0.0232
+Evaluating: 100%|██████████| 6/6 [00:40<00:00,  6.71s/batch]
+2024-12-03 07:56:49,202 - INFO - Epoch 8/30, Validation Loss: 0.0582, Precision: 0.9596, Recall: 0.8913, F1 Score: 0.9242, AUC: 0.9474
+2024-12-03 07:56:49,202 - INFO - Epoch 9/30
+Training Epoch 9/30: 100%|██████████| 16/16 [03:25<00:00, 12.84s/batch]
+2024-12-03 08:00:14,656 - INFO - Epoch 9/30, Training Loss: 0.0215
+Evaluating: 100%|██████████| 6/6 [00:40<00:00,  6.69s/batch]
+2024-12-03 08:00:54,809 - INFO - Epoch 9/30, Validation Loss: 0.0808, Precision: 0.9470, Recall: 0.8834, F1 Score: 0.9141, AUC: 0.9350
+2024-12-03 08:00:54,809 - INFO - Early stopping triggered at epoch 9

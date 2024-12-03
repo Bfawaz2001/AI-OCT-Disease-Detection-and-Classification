@@ -1,0 +1,157 @@
+"C:\Users\Bilal Fawaz\Desktop\OCT-AI-GUI\.venv\Scripts\python.exe" "C:\Users\Bilal Fawaz\Desktop\OCT-AI-GUI\src\train\disease_classification.py"
+2024-12-02 22:52:09,693 - INFO - Using device: cpu
+2024-12-02 22:52:09,693 - INFO - Loading training and validation data...
+2024-12-02 22:52:09,892 - INFO - Initializing the OCT Model for classification...
+2024-12-02 22:52:10,010 - INFO - Epoch 1/20
+Training Epoch 1/20: 100%|██████████| 88/88 [03:10<00:00,  2.17s/batch]
+2024-12-02 22:55:20,979 - INFO - Epoch 1/20, Training Loss: 0.1335
+Validation Epoch 1/20: 100%|██████████| 30/30 [00:39<00:00,  1.32s/batch]
+2024-12-02 22:56:00,699 - INFO - Epoch 1/20, Validation Loss: 0.0695, F1 Score: 0.4293
+2024-12-02 22:56:00,704 - INFO - Classification Report:
+              precision    recall  f1-score   support
+
+          DR       0.80      0.51      0.62       132
+        ARMD       1.00      0.03      0.05        38
+          MH       0.74      0.70      0.72       102
+          DN       0.15      0.04      0.07        46
+         MYA       0.71      0.79      0.75        34
+        TSLN       1.00      0.05      0.09        65
+         ODC       0.24      0.28      0.26        72
+
+   micro avg       0.60      0.39      0.47       489
+   macro avg       0.66      0.34      0.36       489
+weighted avg       0.68      0.39      0.43       489
+ samples avg       0.28      0.24      0.26       489
+
+2024-12-02 22:56:00,727 - INFO - New best model saved with F1 Score: 0.4293
+2024-12-02 22:56:00,727 - INFO - Epoch 2/20
+Training Epoch 2/20: 100%|██████████| 88/88 [03:02<00:00,  2.08s/batch]
+2024-12-02 22:59:03,384 - INFO - Epoch 2/20, Training Loss: 0.0788
+Validation Epoch 2/20: 100%|██████████| 30/30 [00:39<00:00,  1.32s/batch]
+2024-12-02 22:59:43,130 - INFO - Epoch 2/20, Validation Loss: 0.0666, F1 Score: 0.5165
+2024-12-02 22:59:43,135 - INFO - Classification Report:
+              precision    recall  f1-score   support
+
+          DR       0.62      0.83      0.71       132
+        ARMD       0.47      0.55      0.51        38
+          MH       0.87      0.38      0.53       102
+          DN       0.17      0.39      0.23        46
+         MYA       0.66      0.68      0.67        34
+        TSLN       0.71      0.38      0.50        65
+         ODC       0.48      0.19      0.28        72
+
+   micro avg       0.53      0.51      0.52       489
+   macro avg       0.57      0.49      0.49       489
+weighted avg       0.61      0.51      0.52       489
+ samples avg       0.34      0.32      0.32       489
+
+2024-12-02 22:59:43,155 - INFO - New best model saved with F1 Score: 0.5165
+2024-12-02 22:59:43,155 - INFO - Epoch 3/20
+Training Epoch 3/20: 100%|██████████| 88/88 [03:03<00:00,  2.08s/batch]
+2024-12-02 23:02:46,502 - INFO - Epoch 3/20, Training Loss: 0.0637
+Validation Epoch 3/20: 100%|██████████| 30/30 [00:39<00:00,  1.30s/batch]
+2024-12-02 23:03:25,518 - INFO - Epoch 3/20, Validation Loss: 0.0679, F1 Score: 0.5845
+2024-12-02 23:03:25,522 - INFO - Classification Report:
+              precision    recall  f1-score   support
+
+          DR       0.73      0.78      0.75       132
+        ARMD       0.63      0.32      0.42        38
+          MH       0.70      0.72      0.71       102
+          DN       0.25      0.33      0.29        46
+         MYA       0.83      0.56      0.67        34
+        TSLN       0.64      0.60      0.62        65
+         ODC       0.30      0.32      0.31        72
+
+   micro avg       0.59      0.58      0.58       489
+   macro avg       0.58      0.52      0.54       489
+weighted avg       0.60      0.58      0.58       489
+ samples avg       0.39      0.36      0.37       489
+
+2024-12-02 23:03:25,544 - INFO - New best model saved with F1 Score: 0.5845
+2024-12-02 23:03:25,544 - INFO - Epoch 4/20
+Training Epoch 4/20: 100%|██████████| 88/88 [03:04<00:00,  2.09s/batch]
+2024-12-02 23:06:29,746 - INFO - Epoch 4/20, Training Loss: 0.0588
+Validation Epoch 4/20: 100%|██████████| 30/30 [00:37<00:00,  1.24s/batch]
+2024-12-02 23:07:06,996 - INFO - Epoch 4/20, Validation Loss: 0.0727, F1 Score: 0.6028
+2024-12-02 23:07:07,002 - INFO - Classification Report:
+              precision    recall  f1-score   support
+
+          DR       0.84      0.64      0.73       132
+        ARMD       0.68      0.34      0.46        38
+          MH       0.55      0.92      0.69       102
+          DN       0.17      0.61      0.26        46
+         MYA       0.79      0.76      0.78        34
+        TSLN       0.70      0.57      0.63        65
+         ODC       0.41      0.47      0.44        72
+
+   micro avg       0.51      0.65      0.57       489
+   macro avg       0.59      0.62      0.57       489
+weighted avg       0.62      0.65      0.60       489
+ samples avg       0.41      0.39      0.39       489
+
+2024-12-02 23:07:07,027 - INFO - New best model saved with F1 Score: 0.6028
+2024-12-02 23:07:07,027 - INFO - Epoch 5/20
+Training Epoch 5/20: 100%|██████████| 88/88 [03:02<00:00,  2.08s/batch]
+2024-12-02 23:10:09,671 - INFO - Epoch 5/20, Training Loss: 0.0546
+Validation Epoch 5/20: 100%|██████████| 30/30 [00:36<00:00,  1.21s/batch]
+2024-12-02 23:10:45,996 - INFO - Epoch 5/20, Validation Loss: 0.0792, F1 Score: 0.5600
+2024-12-02 23:10:46,002 - INFO - Classification Report:
+              precision    recall  f1-score   support
+
+          DR       0.54      0.90      0.68       132
+        ARMD       0.61      0.29      0.39        38
+          MH       0.73      0.57      0.64       102
+          DN       0.14      0.46      0.22        46
+         MYA       0.68      0.76      0.72        34
+        TSLN       0.61      0.66      0.64        65
+         ODC       0.31      0.51      0.39        72
+
+   micro avg       0.46      0.64      0.53       489
+   macro avg       0.52      0.59      0.53       489
+weighted avg       0.54      0.64      0.56       489
+ samples avg       0.38      0.39      0.37       489
+
+2024-12-02 23:10:46,002 - INFO - Epoch 6/20
+Training Epoch 6/20: 100%|██████████| 88/88 [03:02<00:00,  2.07s/batch]
+2024-12-02 23:13:48,115 - INFO - Epoch 6/20, Training Loss: 0.0467
+Validation Epoch 6/20: 100%|██████████| 30/30 [00:38<00:00,  1.27s/batch]
+2024-12-02 23:14:26,238 - INFO - Epoch 6/20, Validation Loss: 0.0739, F1 Score: 0.6055
+2024-12-02 23:14:26,243 - INFO - Classification Report:
+              precision    recall  f1-score   support
+
+          DR       0.80      0.73      0.76       132
+        ARMD       0.51      0.58      0.54        38
+          MH       0.70      0.73      0.71       102
+          DN       0.21      0.70      0.32        46
+         MYA       0.85      0.32      0.47        34
+        TSLN       0.57      0.72      0.64        65
+         ODC       0.43      0.40      0.42        72
+
+   micro avg       0.53      0.64      0.58       489
+   macro avg       0.58      0.60      0.55       489
+weighted avg       0.62      0.64      0.61       489
+ samples avg       0.40      0.39      0.38       489
+
+2024-12-02 23:14:26,263 - INFO - New best model saved with F1 Score: 0.6055
+2024-12-02 23:14:26,263 - INFO - Epoch 7/20
+Training Epoch 7/20: 100%|██████████| 88/88 [03:02<00:00,  2.07s/batch]
+2024-12-02 23:17:28,532 - INFO - Epoch 7/20, Training Loss: 0.0422
+Validation Epoch 7/20: 100%|██████████| 30/30 [00:36<00:00,  1.21s/batch]
+2024-12-02 23:18:04,850 - INFO - Epoch 7/20, Validation Loss: 0.0801, F1 Score: 0.6001
+2024-12-02 23:18:04,855 - INFO - Classification Report:
+              precision    recall  f1-score   support
+
+          DR       0.59      0.86      0.70       132
+        ARMD       0.63      0.32      0.42        38
+          MH       0.74      0.78      0.76       102
+          DN       0.25      0.52      0.34        46
+         MYA       0.87      0.59      0.70        34
+        TSLN       0.70      0.48      0.57        65
+         ODC       0.37      0.49      0.42        72
+
+   micro avg       0.55      0.65      0.59       489
+   macro avg       0.60      0.58      0.56       489
+weighted avg       0.60      0.65      0.60       489
+ samples avg       0.42      0.40      0.40       489
+
+2024-12-02 23:18:04,855 - INFO - Epoch 8/20

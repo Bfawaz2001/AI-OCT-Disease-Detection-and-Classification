@@ -1,0 +1,49 @@
+"C:\Users\Bilal Fawaz\Desktop\OCT-AI-GUI\.venv\Scripts\python.exe" "C:\Users\Bilal Fawaz\Desktop\OCT-AI-GUI\src\train\disease_detection.py"
+2024-12-02 23:53:13,301 - INFO - Using device: cpu
+2024-12-02 23:53:13,301 - INFO - Loading training and validation data...
+2024-12-02 23:53:13,305 - INFO - Class weights: [2.39401496 0.63199473]
+2024-12-02 23:53:13,308 - INFO - Initializing the OCT Model for disease detection...
+2024-12-02 23:53:13,413 - INFO - Epoch 1/30
+Training Epoch 1/30: 100%|██████████| 88/88 [03:03<00:00,  2.09s/batch]
+2024-12-02 23:56:17,156 - INFO - Epoch 1/30, Training Loss: 0.0714
+Evaluating: 100%|██████████| 30/30 [00:39<00:00,  1.33s/batch]
+2024-12-02 23:56:57,156 - INFO - Epoch 1/30, Validation Loss: 0.0486, Precision: 0.9561, Recall: 0.8617, F1 Score: 0.9064, AUC: 0.9225
+2024-12-02 23:56:57,179 - INFO - New best model saved with F1 Score: 0.9064
+2024-12-02 23:56:57,179 - INFO - Epoch 2/30
+Training Epoch 2/30: 100%|██████████| 88/88 [03:00<00:00,  2.05s/batch]
+2024-12-02 23:59:57,372 - INFO - Epoch 2/30, Training Loss: 0.0549
+Evaluating: 100%|██████████| 30/30 [00:40<00:00,  1.34s/batch]
+2024-12-03 00:00:37,448 - INFO - Epoch 2/30, Validation Loss: 0.0528, Precision: 0.9142, Recall: 0.9051, F1 Score: 0.9096, AUC: 0.9053
+2024-12-03 00:00:37,468 - INFO - New best model saved with F1 Score: 0.9096
+2024-12-03 00:00:37,468 - INFO - Epoch 3/30
+Training Epoch 3/30: 100%|██████████| 88/88 [03:01<00:00,  2.07s/batch]
+2024-12-03 00:03:39,218 - INFO - Epoch 3/30, Training Loss: 0.0532
+Evaluating: 100%|██████████| 30/30 [00:39<00:00,  1.32s/batch]
+2024-12-03 00:04:18,862 - INFO - Epoch 3/30, Validation Loss: 0.0427, Precision: 0.9516, Recall: 0.8933, F1 Score: 0.9215, AUC: 0.9359
+2024-12-03 00:04:18,882 - INFO - New best model saved with F1 Score: 0.9215
+2024-12-03 00:04:18,882 - INFO - Epoch 4/30
+Training Epoch 4/30: 100%|██████████| 88/88 [02:59<00:00,  2.04s/batch]
+2024-12-03 00:07:18,832 - INFO - Epoch 4/30, Training Loss: 0.0521
+Evaluating: 100%|██████████| 30/30 [00:39<00:00,  1.32s/batch]
+2024-12-03 00:07:58,565 - INFO - Epoch 4/30, Validation Loss: 0.0489, Precision: 0.9398, Recall: 0.8953, F1 Score: 0.9170, AUC: 0.9273
+2024-12-03 00:07:58,565 - INFO - Epoch 5/30
+Training Epoch 5/30: 100%|██████████| 88/88 [02:59<00:00,  2.04s/batch]
+2024-12-03 00:10:58,509 - INFO - Epoch 5/30, Training Loss: 0.0495
+Evaluating: 100%|██████████| 30/30 [00:39<00:00,  1.32s/batch]
+2024-12-03 00:11:38,017 - INFO - Epoch 5/30, Validation Loss: 0.0470, Precision: 0.9762, Recall: 0.8123, F1 Score: 0.8867, AUC: 0.9377
+2024-12-03 00:11:38,017 - INFO - Epoch 6/30
+Training Epoch 6/30: 100%|██████████| 88/88 [02:59<00:00,  2.04s/batch]
+2024-12-03 00:14:37,314 - INFO - Epoch 6/30, Training Loss: 0.0445
+Evaluating: 100%|██████████| 30/30 [00:39<00:00,  1.32s/batch]
+2024-12-03 00:15:16,955 - INFO - Epoch 6/30, Validation Loss: 0.0436, Precision: 0.9073, Recall: 0.9091, F1 Score: 0.9082, AUC: 0.9261
+2024-12-03 00:15:16,955 - INFO - Epoch 7/30
+Training Epoch 7/30: 100%|██████████| 88/88 [02:58<00:00,  2.03s/batch]
+2024-12-03 00:18:15,193 - INFO - Epoch 7/30, Training Loss: 0.0418
+Evaluating: 100%|██████████| 30/30 [00:39<00:00,  1.33s/batch]
+2024-12-03 00:18:55,172 - INFO - Epoch 7/30, Validation Loss: 0.0464, Precision: 0.9750, Recall: 0.8478, F1 Score: 0.9070, AUC: 0.9421
+2024-12-03 00:18:55,172 - INFO - Epoch 8/30
+Training Epoch 8/30: 100%|██████████| 88/88 [03:08<00:00,  2.15s/batch]
+2024-12-03 00:22:03,971 - INFO - Epoch 8/30, Training Loss: 0.0379
+Evaluating: 100%|██████████| 30/30 [00:36<00:00,  1.22s/batch]
+2024-12-03 00:22:40,691 - INFO - Epoch 8/30, Validation Loss: 0.0474, Precision: 0.9684, Recall: 0.8478, F1 Score: 0.9041, AUC: 0.9441
+2024-12-03 00:22:40,691 - INFO - Early stopping triggered at epoch 8

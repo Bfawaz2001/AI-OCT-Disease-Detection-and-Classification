@@ -130,15 +130,80 @@ if __name__ == "__main__":
     val_csv = "../../data/classification/RFMiD_Validation_Classification.csv"
     train_image_dir = "../../data/train/images"
     val_image_dir = "../../data/val/images"
-    model_save_path = "../../model/disease_classification_model_v15.pth"
+    model_save_path = "../../model/disease_classification_model_v17.pth"
 
     # Hyperparameters
-    num_epochs = 20
-    batch_size = 35
-    learning_rate = 0.0005
+    num_epochs = 30
+    batch_size = 124
+    learning_rate = 0.0001
 
     # Device
     device = torch.device("cuda" if torch.cuda.is_available() else "cpu")
+
+    # Train the model
+    train_classification_model(
+        train_csv, val_csv, train_image_dir, val_image_dir, model_save_path,
+        num_epochs, batch_size, learning_rate, device
+    )
+
+    model_save_path = "../../model/disease_classification_model_v18.pth"
+
+    # Hyperparameters
+    num_epochs = 30
+    batch_size = 124
+    learning_rate = 0.001
+
+    # Train the model
+    train_classification_model(
+        train_csv, val_csv, train_image_dir, val_image_dir, model_save_path,
+        num_epochs, batch_size, learning_rate, device
+    )
+
+    model_save_path = "../../model/disease_classification_model_v19.pth"
+
+    # Hyperparameters
+    num_epochs = 30
+    batch_size = 22
+    learning_rate = 0.005
+
+    # Train the model
+    train_classification_model(
+        train_csv, val_csv, train_image_dir, val_image_dir, model_save_path,
+        num_epochs, batch_size, learning_rate, device
+    )
+
+    model_save_path = "../../model/disease_classification_model_v20.pth"
+
+    # Hyperparameters
+    num_epochs = 30
+    batch_size = 32
+    learning_rate = 0.001
+
+    # Train the model
+    train_classification_model(
+        train_csv, val_csv, train_image_dir, val_image_dir, model_save_path,
+        num_epochs, batch_size, learning_rate, device
+    )
+
+    model_save_path = "../../model/disease_classification_model_v21.pth"
+
+    # Hyperparameters
+    num_epochs = 30
+    batch_size = 64
+    learning_rate = 0.0001
+
+    # Train the model
+    train_classification_model(
+        train_csv, val_csv, train_image_dir, val_image_dir, model_save_path,
+        num_epochs, batch_size, learning_rate, device
+    )
+
+    model_save_path = "../../model/disease_classification_model_v22.pth"
+
+    # Hyperparameters
+    num_epochs = 30
+    batch_size = 32
+    learning_rate = 0.0001
 
     # Train the model
     train_classification_model(

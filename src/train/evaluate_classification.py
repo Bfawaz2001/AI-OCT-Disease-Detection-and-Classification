@@ -115,7 +115,7 @@ if __name__ == "__main__":
     # Paths
     test_csv = "../../data/classification/RFMiD_Testing_Classification.csv"
     test_image_dir = "../../data/test/images"
-    model_path = "../../model/disease_classification_model_v10.pth"
+    model_path = "../../model/disease_classification_model_v15.pth"
 
     # Device
     device = torch.device("cuda" if torch.cuda.is_available() else "cpu")

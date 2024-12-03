@@ -101,7 +101,7 @@ def evaluate_model(model_path, test_csv, test_image_dir, label_column, device="c
 
 if __name__ == "__main__":
     # Paths and parameters
-    model_path = "../../model/disease_detection_model_v14.pth"
+    model_path = "../../model/disease_detection_model_v24.pth"
     test_csv = "../../data/test/RFMiD_Testing_Labels.csv"
     test_image_dir = "../../data/test/images"
     label_column = "Disease_Risk"

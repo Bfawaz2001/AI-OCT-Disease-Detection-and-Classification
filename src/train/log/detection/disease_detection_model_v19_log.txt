@@ -1,0 +1,53 @@
+2024-12-03 01:20:44,996 - INFO - Using device: cpu
+2024-12-03 01:20:44,996 - INFO - Loading training and validation data...
+2024-12-03 01:20:45,001 - INFO - Class weights: [2.39401496 0.63199473]
+2024-12-03 01:20:45,006 - INFO - Initializing the OCT Model for disease detection...
+2024-12-03 01:20:45,088 - INFO - Epoch 1/30
+Training Epoch 1/30: 100%|██████████| 20/20 [03:38<00:00, 10.93s/batch]
+2024-12-03 01:24:23,668 - INFO - Epoch 1/30, Training Loss: 0.0943
+Evaluating: 100%|██████████| 7/7 [00:40<00:00,  5.79s/batch]
+2024-12-03 01:25:04,299 - INFO - Epoch 1/30, Validation Loss: 0.0491, Precision: 0.9372, Recall: 0.9150, F1 Score: 0.9260, AUC: 0.9264
+2024-12-03 01:25:04,348 - INFO - New best model saved with F1 Score: 0.9260
+2024-12-03 01:25:04,348 - INFO - Epoch 2/30
+Training Epoch 2/30: 100%|██████████| 20/20 [03:23<00:00, 10.18s/batch]
+2024-12-03 01:28:27,896 - INFO - Epoch 2/30, Training Loss: 0.0498
+Evaluating: 100%|██████████| 7/7 [00:40<00:00,  5.73s/batch]
+2024-12-03 01:29:08,028 - INFO - Epoch 2/30, Validation Loss: 0.0541, Precision: 0.8793, Recall: 0.9506, F1 Score: 0.9136, AUC: 0.9325
+2024-12-03 01:29:08,029 - INFO - Epoch 3/30
+Training Epoch 3/30: 100%|██████████| 20/20 [03:23<00:00, 10.16s/batch]
+2024-12-03 01:32:31,141 - INFO - Epoch 3/30, Training Loss: 0.0411
+Evaluating: 100%|██████████| 7/7 [00:40<00:00,  5.72s/batch]
+2024-12-03 01:33:11,163 - INFO - Epoch 3/30, Validation Loss: 0.0654, Precision: 0.9306, Recall: 0.9269, F1 Score: 0.9287, AUC: 0.9456
+2024-12-03 01:33:11,195 - INFO - New best model saved with F1 Score: 0.9287
+2024-12-03 01:33:11,195 - INFO - Epoch 4/30
+Training Epoch 4/30: 100%|██████████| 20/20 [03:22<00:00, 10.12s/batch]
+2024-12-03 01:36:33,661 - INFO - Epoch 4/30, Training Loss: 0.0408
+Evaluating: 100%|██████████| 7/7 [00:39<00:00,  5.70s/batch]
+2024-12-03 01:37:13,566 - INFO - Epoch 4/30, Validation Loss: 0.0504, Precision: 0.9344, Recall: 0.9289, F1 Score: 0.9316, AUC: 0.9438
+2024-12-03 01:37:13,597 - INFO - New best model saved with F1 Score: 0.9316
+2024-12-03 01:37:13,597 - INFO - Epoch 5/30
+Training Epoch 5/30: 100%|██████████| 20/20 [03:22<00:00, 10.15s/batch]
+2024-12-03 01:40:36,554 - INFO - Epoch 5/30, Training Loss: 0.0344
+Evaluating: 100%|██████████| 7/7 [00:39<00:00,  5.68s/batch]
+2024-12-03 01:41:16,352 - INFO - Epoch 5/30, Validation Loss: 0.0812, Precision: 0.8763, Recall: 0.9664, F1 Score: 0.9192, AUC: 0.9347
+2024-12-03 01:41:16,352 - INFO - Epoch 6/30
+Training Epoch 6/30: 100%|██████████| 20/20 [03:23<00:00, 10.17s/batch]
+2024-12-03 01:44:39,785 - INFO - Epoch 6/30, Training Loss: 0.0360
+Evaluating: 100%|██████████| 7/7 [00:40<00:00,  5.72s/batch]
+2024-12-03 01:45:19,853 - INFO - Epoch 6/30, Validation Loss: 0.0692, Precision: 0.9689, Recall: 0.8617, F1 Score: 0.9121, AUC: 0.9402
+2024-12-03 01:45:19,854 - INFO - Epoch 7/30
+Training Epoch 7/30: 100%|██████████| 20/20 [03:21<00:00, 10.06s/batch]
+2024-12-03 01:48:41,126 - INFO - Epoch 7/30, Training Loss: 0.0327
+Evaluating: 100%|██████████| 7/7 [00:39<00:00,  5.70s/batch]
+2024-12-03 01:49:21,010 - INFO - Epoch 7/30, Validation Loss: 0.0568, Precision: 0.9604, Recall: 0.8636, F1 Score: 0.9095, AUC: 0.9365
+2024-12-03 01:49:21,010 - INFO - Epoch 8/30
+Training Epoch 8/30: 100%|██████████| 20/20 [03:21<00:00, 10.08s/batch]
+2024-12-03 01:52:42,540 - INFO - Epoch 8/30, Training Loss: 0.0355
+Evaluating: 100%|██████████| 7/7 [00:39<00:00,  5.69s/batch]
+2024-12-03 01:53:22,367 - INFO - Epoch 8/30, Validation Loss: 0.0629, Precision: 0.9550, Recall: 0.8814, F1 Score: 0.9168, AUC: 0.9392
+2024-12-03 01:53:22,367 - INFO - Epoch 9/30
+Training Epoch 9/30: 100%|██████████| 20/20 [03:22<00:00, 10.11s/batch]
+2024-12-03 01:56:44,537 - INFO - Epoch 9/30, Training Loss: 0.0307
+Evaluating: 100%|██████████| 7/7 [00:39<00:00,  5.71s/batch]
+2024-12-03 01:57:24,483 - INFO - Epoch 9/30, Validation Loss: 0.0701, Precision: 0.9223, Recall: 0.9150, F1 Score: 0.9187, AUC: 0.9314
+2024-12-03 01:57:24,484 - INFO - Early stopping triggered at epoch 9
