@@ -1,11 +1,9 @@
 
-# OCT-AI: Optical Coherence Tomography Disease Detection and Classification
+# AI OCT Disease Detection and Classification
 
-This repository provides a comprehensive solution for **Optical Coherence Tomography (OCT) Disease Detection and Classification**. The project features a GUI application for detecting retinal diseases using OCT images and a training pipeline for customizisg and improving the classification models.
+This repository provides a comprehensive solution for **Optical Coherence Tomography (OCT) Disease Detection and Classification**. The project features a GUI application for detecting retinal diseases using OCT images and a training pipeline for customising and improving the classification models.
 
 ---
-
-# OCT AI - Optical Coherence Tomography Analysis for Retinal Diseases
 
 ## Table of Contents
 1. [Introduction](#introduction)
@@ -20,6 +18,9 @@ This repository provides a comprehensive solution for **Optical Coherence Tomogr
 4. [Dataset](#dataset)
 5. [Usage and Setup](#usage-and-setup)
 6. [Results](#results)
+   - [Disease Detection Evaluation](#disease-detection-evaluation)
+   - [Disease Classification Evaluation](#disease-classification-evaluation)
+   - [Discussion Of Results](#discussion-of-results)
 7. [Directory Structure](#directory-structure)
 8. [Contributing](#contributing)
 9. [License](#license)
