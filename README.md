@@ -244,11 +244,12 @@ The disease detection preformed best with model version 23 achieving the highest
 
 #### **Confusion Matrix Heatmap for Disease Detection**:
 
- ![Confusion Matrix](src/train/evaluation graphs/detection/disease_detection_model_v23/confusion_matrix.png "Confusion Matrix for Disease Detection")
+![confusion_matrix](https://github.com/user-attachments/assets/32cf01c8-cb91-46ff-a871-fe35b82b3a20)
 
 #### **ROC Curve for Disease Detection**:
 
-![ROC Curve](src/train/evaluation graphs/detection/disease_detection_model_v23/roc_curve.png "ROC Curve for detection")
+
+![roc_curve](https://github.com/user-attachments/assets/c34a4f37-da11-4c61-abc1-aba38719fef0)
 
 
 ---
@@ -279,18 +280,17 @@ The classification model achieved the following results for individual diseases:
 ### Visualizations
 
 #### **Confusion Matrix Heatmaps for Each Disease**:
-
-![Confusion Matrix for DR](src/train/evaluation graphs/classification/disease_classification_model_v15/DR_confusion_matrix.png "DR Confusion Matrix for Disease Detection")
-![Confusion Matrix for ARMD](src/train/evaluation graphs/classification/disease_classification_model_v15/ARMD_confusion_matrix.png "ARMD Confusion Matrix for Disease Detection")
-![Confusion Matrix for MH](src/train/evaluation graphs/classification/disease_classification_model_v15/MH_confusion_matrix.png "MH Confusion Matrix for Disease Detection")
-![Confusion Matrix for DN](src/train/evaluation graphs/classification/disease_classification_model_v15/DN_confusion_matrix.png "DN Confusion Matrix for Disease Detection")
-![Confusion Matrix for MYA](src/train/evaluation graphs/classification/disease_classification_model_v15/MYA_confusion_matrix.png "MYA Confusion Matrix for Disease Detection")
-![Confusion Matrix for TSLN](src/train/evaluation graphs/classification/disease_classification_model_v15/TSLN_confusion_matrix.png "TSLN Confusion Matrix for Disease Detection")
-![Confusion Matrix for ODC](src/train/evaluation graphs/classification/disease_classification_model_v15/ODC_confusion_matrix.png "ODC Confusion Matrix for Disease Detection")
+![TSLN_confusion_matrix](https://github.com/user-attachments/assets/5b01334b-da66-488e-9874-0d2fadab91d7)
+![ODC_confusion_matrix](https://github.com/user-attachments/assets/9194adcc-8155-4c4b-aa99-6ff0befbcafe)
+![MH_confusion_matrix](https://github.com/user-attachments/assets/dfd371e5-c133-4e4e-a23e-23f95092337f)
+![MYA_confusion_matrix](https://github.com/user-attachments/assets/db324551-0fc8-46bd-9a31-16bd5fe1178a)
+![DR_confusion_matrix](https://github.com/user-attachments/assets/c64fd41e-64e3-401d-8b61-19dc5f2e7e84)
+![DN_confusion_matrix](https://github.com/user-attachments/assets/5f4ced10-c966-4f78-a567-cc90b663d786)
+![ARMD_confusion_matrix](https://github.com/user-attachments/assets/0184d4ba-5607-43ca-b23c-bc56fbd91a21)
 
 #### **Overall ROC Curves Including Each Disease**:
 
-![Overall ROC Curves](src/train/evaluation graphs/classification/disease_classification_model_v15/roc_curves_all_diseases.png "Overall ROC Curves for Classification")
+![roc_curves_all_diseases](https://github.com/user-attachments/assets/1c0f7c62-8cbe-4549-9d37-e59f7bbb5217)
 
 ---
 
