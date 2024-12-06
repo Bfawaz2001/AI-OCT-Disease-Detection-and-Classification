@@ -1,9 +1,10 @@
+import os
 import pandas as pd
 import torch
 from torch.utils.data import DataLoader
 from albumentations import Compose, Resize, Normalize
 from albumentations.pytorch import ToTensorV2
-from sklearn.metrics import classification_report, roc_auc_score, roc_curve, confusion_matrix, ConfusionMatrixDisplay
+from sklearn.metrics import classification_report, roc_auc_score, roc_curve, confusion_matrix
 import matplotlib.pyplot as plt
 import seaborn as sns
 from tqdm import tqdm
@@ -15,10 +16,16 @@ import numpy as np
 # Configure Logging
 logging.basicConfig(level=logging.INFO)
 
-
 def evaluate_model(model_path, test_csv, test_image_dir, label_column, device="cpu"):
     logging.info(f"Using device: {device}")
     logging.info("Loading test data...")
+
+    # Extract model name/version from the file path
+    model_name_or_version = os.path.splitext(os.path.basename(model_path))[0]
+
+    # Define the output directory for evaluation graphs
+    output_dir = os.path.join("evaluation graphs", "detection", model_name_or_version)
+    os.makedirs(output_dir, exist_ok=True)
 
     # Load test data
     test_data = pd.read_csv(test_csv)
@@ -41,7 +48,7 @@ def evaluate_model(model_path, test_csv, test_image_dir, label_column, device="c
 
     # Load model
     model = OCTModel(num_classes=1).to(device)
-    model.load_state_dict(torch.load(model_path, map_location=device, weights_only=True))
+    model.load_state_dict(torch.load(model_path, map_location=device))
     model.eval()
 
     # Evaluation
@@ -77,7 +84,7 @@ def evaluate_model(model_path, test_csv, test_image_dir, label_column, device="c
     logging.info(f"AUC: {auc_score:.4f}")
     logging.info(f"\n{classification_report_str}")
 
-    # Plot ROC curve
+    # Plot and save ROC curve
     fpr, tpr, _ = roc_curve(all_labels, all_probs)
     plt.figure(figsize=(8, 6))
     plt.plot(fpr, tpr, label=f"ROC Curve (AUC = {auc_score:.4f})")
@@ -86,9 +93,12 @@ def evaluate_model(model_path, test_csv, test_image_dir, label_column, device="c
     plt.title("ROC Curve for Disease Detection")
     plt.legend(loc="lower right")
     plt.grid()
-    plt.show()
+    roc_path = os.path.join(output_dir, "roc_curve.png")
+    plt.savefig(roc_path)
+    logging.info(f"ROC Curve saved to {roc_path}")
+    plt.close()
 
-    # Confusion matrix
+    # Plot and save confusion matrix heatmap
     conf_matrix = confusion_matrix(all_labels, all_predictions)
     plt.figure(figsize=(8, 6))
     sns.heatmap(conf_matrix, annot=True, fmt='d', cmap="Blues", xticklabels=["No Disease", "Disease"],
@@ -96,12 +106,15 @@ def evaluate_model(model_path, test_csv, test_image_dir, label_column, device="c
     plt.title("Confusion Matrix Heatmap")
     plt.xlabel("Predicted Labels")
     plt.ylabel("True Labels")
-    plt.show()
+    cm_path = os.path.join(output_dir, "confusion_matrix.png")
+    plt.savefig(cm_path)
+    logging.info(f"Confusion Matrix saved to {cm_path}")
+    plt.close()
 
 
 if __name__ == "__main__":
     # Paths and parameters
-    model_path = "../../model/disease_detection_model_v24.pth"
+    model_path = "../../model/disease_detection_model_v23.pth"
     test_csv = "../../data/test/RFMiD_Testing_Labels.csv"
     test_image_dir = "../../data/test/images"
     label_column = "Disease_Risk"

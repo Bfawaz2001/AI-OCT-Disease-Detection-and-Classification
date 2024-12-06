@@ -1,3 +1,4 @@
+import os
 import pandas as pd
 import torch
 from torch.utils.data import DataLoader
@@ -15,10 +16,17 @@ import numpy as np
 # Configure logging
 logging.basicConfig(level=logging.INFO)
 
-
 def evaluate_classification_model(model_path, test_csv, test_image_dir, device="cpu"):
     logging.info(f"Using device: {device}")
     logging.info("Loading test data...")
+
+    # Extract model name/version from the file path
+    model_name_or_version = os.path.splitext(os.path.basename(model_path))[0]
+
+    # Define output directory for evaluation graphs
+    base_dir = os.path.dirname(__file__)  # Get the directory of the current script
+    output_dir = os.path.join(base_dir, "evaluation graphs", "classification", model_name_or_version)
+    os.makedirs(output_dir, exist_ok=True)
 
     # Load test data
     test_data = pd.read_csv(test_csv)
@@ -43,7 +51,7 @@ def evaluate_classification_model(model_path, test_csv, test_image_dir, device="
 
     # Load model
     model = OCTModel(num_classes=num_classes, dropout_rate=0.3).to(device)
-    model.load_state_dict(torch.load(model_path, map_location=device, weights_only=True))
+    model.load_state_dict(torch.load(model_path, map_location=device))
     model.eval()
 
     # Metrics
@@ -76,13 +84,9 @@ def evaluate_classification_model(model_path, test_csv, test_image_dir, device="
     recall = recall_score(all_labels.flatten(), all_predictions.flatten(), average='macro', zero_division=0)
     f1 = f1_score(all_labels.flatten(), all_predictions.flatten(), average='macro', zero_division=0)
 
-    print(f"Overall Metrics:")
-    print(f"Accuracy: {accuracy:.4f}")
-    print(f"Precision: {precision:.4f}")
-    print(f"Recall: {recall:.4f}")
-    print(f"F1 Score: {f1:.4f}")
+    logging.info(f"Overall Metrics:\nAccuracy: {accuracy:.4f}\nPrecision: {precision:.4f}\nRecall: {recall:.4f}\nF1 Score: {f1:.4f}")
 
-    # Plot overall ROC curve
+    # Plot and save overall ROC curve
     plt.figure()
     for i, label in enumerate(label_columns):
         fpr, tpr, _ = roc_curve(all_labels[:, i], all_probs[:, i])
@@ -90,25 +94,32 @@ def evaluate_classification_model(model_path, test_csv, test_image_dir, device="
         plt.plot(fpr, tpr, label=f"{label} (AUC = {auc:.4f})")
     plt.xlabel("False Positive Rate")
     plt.ylabel("True Positive Rate")
-    plt.title("Overall ROC Curve")
+    plt.title("ROC Curves for All Diseases")
     plt.legend(loc="lower right")
     plt.grid()
-    plt.show()
+    roc_path = os.path.join(output_dir, "roc_curves_all_diseases.png")
+    plt.savefig(roc_path)
+    logging.info(f"ROC Curves for All Diseases saved to {roc_path}")
+    plt.close()
 
     # Compute per-disease metrics and confusion matrices
     for i, label in enumerate(label_columns):
-        print(f"Metrics for {label}:")
-        print(classification_report(all_labels[:, i], all_predictions[:, i]))
+        logging.info(f"Metrics for {label}:")
+        report = classification_report(all_labels[:, i], all_predictions[:, i])
+        logging.info(f"\n{report}")
         conf_matrix = confusion_matrix(all_labels[:, i], all_predictions[:, i])
 
-        # Plot confusion matrix heatmap for each disease
+        # Plot and save confusion matrix heatmap for each disease
         plt.figure(figsize=(8, 6))
         sns.heatmap(conf_matrix, annot=True, fmt='d', cmap="Blues", xticklabels=["Negative", "Positive"],
                     yticklabels=["Negative", "Positive"])
         plt.title(f"Confusion Matrix for {label}")
         plt.xlabel("Predicted Labels")
         plt.ylabel("True Labels")
-        plt.show()
+        conf_matrix_path = os.path.join(output_dir, f"{label}_confusion_matrix.png")
+        plt.savefig(conf_matrix_path)
+        logging.info(f"Confusion Matrix for {label} saved to {conf_matrix_path}")
+        plt.close()
 
 
 if __name__ == "__main__":
