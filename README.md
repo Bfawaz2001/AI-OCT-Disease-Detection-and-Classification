@@ -280,13 +280,13 @@ The classification model achieved the following results for individual diseases:
 
 #### **Confusion Matrix Heatmaps for Each Disease**:
 
- ![Confusion Matrix for DR](src/train/evaluation graphs/classification/disease_classification_model_v15/DR_confusion_matrix.png "DR Confusion Matrix for Disease Detection")
- ![Confusion Matrix for ARMD](src/train/evaluation graphs/classification/disease_classification_model_v15/ARMD_confusion_matrix.png "ARMD Confusion Matrix for Disease Detection")
- ![Confusion Matrix for MH](src/train/evaluation graphs/classification/disease_classification_model_v15/MH_confusion_matrix.png "MH Confusion Matrix for Disease Detection")
- ![Confusion Matrix for DN](src/train/evaluation graphs/classification/disease_classification_model_v15/DN_confusion_matrix.png "DN Confusion Matrix for Disease Detection")
- ![Confusion Matrix for MYA](src/train/evaluation graphs/classification/disease_classification_model_v15/MYA_confusion_matrix.png "MYA Confusion Matrix for Disease Detection")
- ![Confusion Matrix for TSLN](src/train/evaluation graphs/classification/disease_classification_model_v15/TSLN_confusion_matrix.png "TSLN Confusion Matrix for Disease Detection")
- ![Confusion Matrix for ODC](src/train/evaluation graphs/classification/disease_classification_model_v15/ODC_confusion_matrix.png "ODC Confusion Matrix for Disease Detection")
+![Confusion Matrix for DR](src/train/evaluation graphs/classification/disease_classification_model_v15/DR_confusion_matrix.png "DR Confusion Matrix for Disease Detection")
+![Confusion Matrix for ARMD](src/train/evaluation graphs/classification/disease_classification_model_v15/ARMD_confusion_matrix.png "ARMD Confusion Matrix for Disease Detection")
+![Confusion Matrix for MH](src/train/evaluation graphs/classification/disease_classification_model_v15/MH_confusion_matrix.png "MH Confusion Matrix for Disease Detection")
+![Confusion Matrix for DN](src/train/evaluation graphs/classification/disease_classification_model_v15/DN_confusion_matrix.png "DN Confusion Matrix for Disease Detection")
+![Confusion Matrix for MYA](src/train/evaluation graphs/classification/disease_classification_model_v15/MYA_confusion_matrix.png "MYA Confusion Matrix for Disease Detection")
+![Confusion Matrix for TSLN](src/train/evaluation graphs/classification/disease_classification_model_v15/TSLN_confusion_matrix.png "TSLN Confusion Matrix for Disease Detection")
+![Confusion Matrix for ODC](src/train/evaluation graphs/classification/disease_classification_model_v15/ODC_confusion_matrix.png "ODC Confusion Matrix for Disease Detection")
 
 #### **Overall ROC Curves Including Each Disease**:
 
