@@ -141,14 +141,14 @@ The OCT AI system offers multiple functionalities, including a user-friendly GUI
 
 1. Clone this repository:
    ```bash
-   git clone https://github.com/yourusername/OCT-AI.git
-   cd OCT-AI
+   git clone https://github.com/Bfawaz2001/AI-OCT-Disease-Detection-and-Classification.git
+   cd AI-OCT-Disease-Detection-and-Classification
    ```
 2. Create and activate a virtual environment:
 
     ```bash
     python -m venv .venv
-    source .venv/bin/activate  # For Linux/MacOS
+    source .venv/bin/activate    # For Linux/MacOS
     .venv\\Scripts\\activate     # For Windows
     ```
 
